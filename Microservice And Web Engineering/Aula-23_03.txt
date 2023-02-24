@@ -1,0 +1,36 @@
+	Microserviços não podem ser muito grande e também não podem ser muito pequeno.
+
+	Projeto Discovery Microserviços
+	
+	- Entidades
+		
+		-- Cruzeiros
+		-- Excursões
+		-- Passagens
+		-- Pacotes
+		-- Cliente (nome, email, tel, end)
+			(Surge um microserviço para essa tarefa)
+			\--> Autencicação --> 2FA (TWO FACTOR AUTHENTICATION) --> SABE (SENHA)
+									  --> TEM (TOKEN)
+									  
+							  --> MFA (MULTI FACTOR AUTHENTICATION)--> Tem o SABE, TEM e tem também O QUE VOCÊ É (BIOMETRIA)
+			\--> Autorização  --> o usuario ja é autenticado, mas só faz o que ele tem direito	
+			
+			
+			(APIs que a comunidade implementou para fazer a autenticação e a autorização - ex: Key Cloack, Identity Server, Auth "simbolo nulo")
+			
+			O SSO seria o serviço que faria essa parte de autenticação e autorização
+		
+	- Protocolo OAUTH2 e tem a extensão OpenID - diz/prescreve quais são as boas praticas para implementar login de diversas aplicações seja, mobile,
+	web (volta um token) ou etc...
+	
+		-- Para WEB: para trafegar as informações ele indica utilizar o J W T (Json Web Token)
+		
+	Infraestrutura como serviço - IAAS
+	Plataforma como serviço - PAAS (Ex: banco de dados)
+	Software como serviço - SAAS (Ex: Email, Office 365, Spotify, Netflix, SAP, minha API)
+	Função como serviço - FAAS (Ex: você pode dar deploy apenas em um metodo. Exemplo um método que pega uma info no banco de dados e monta um Nota Fiscal)
+		\--> Exemplo: o OAUTH2 é um deles;
+	
+	API Gateway
+	BFF - Backend for Frontend ( ele faz um query/requisição para as entidades e devolve em um formato para o frontend, por exemplo, para consultar infos dos clientes e dos pacotes contratados)
