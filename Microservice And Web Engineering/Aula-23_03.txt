@@ -34,3 +34,19 @@
 	
 	API Gateway
 	BFF - Backend for Frontend ( ele faz um query/requisição para as entidades e devolve em um formato para o frontend, por exemplo, para consultar infos dos clientes e dos pacotes contratados)
+	
+2° Parte da Aula 
+
+	Intercâmbio de Informações
+		- Como compreendemos outros idiomas?
+		- Como sistemas trocam informações?
+	
+	Cliente x Servidor
+		- navegador;
+		- 
+		- api;
+	
+	A comunicação entre sistemas é feita entre o lado do cliente <-> web <-> lado do servidor
+	
+	O cliente manda uma HTTP request para o servidor, e o servidor manda um HTTP response para o cliente.
+	 
