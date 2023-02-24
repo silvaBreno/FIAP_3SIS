@@ -49,4 +49,6 @@
 	A comunicação entre sistemas é feita entre o lado do cliente <-> web <-> lado do servidor
 	
 	O cliente manda uma HTTP request para o servidor, e o servidor manda um HTTP response para o cliente.
-	 
+	
+		O cliente perguntar para o servidor DNS que recorta o firewall e o firewall  filtra a informação para mandar/permitir e enviar o cliente para pagina da FIAP, ele redireciona para o firewall para evitar os famosos ataques DDoS.
+		dentro do CMD Prompt: ao inves de usar o comando ping ping fiap.com.br , podemos utilizar o nslookup fiap.com.br
