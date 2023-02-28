@@ -52,3 +52,25 @@ WHERE location_id = 1700;
 --porém, em geral as subqueries são menos performáticas
 --em outros sgbd a performance muito provavelmente será pior
 --dê preferência para junção (JOIN)
+
+--5
+SELECT last_name, salary
+FROM employees
+WHERE manager_id = (SELECT employee_id
+                    FROM employees
+                    WHERE first_name = 'Steven' and last_name = 'King');
+--6
+
+--7
+SELECT employee_id, last_name
+FROM employees
+WHERE department_id in (SELECT department_id
+                        FROM employees
+                        WHERE LOWER(last_name) like '%u%')
+                    and SALARY > (SELECT AVG(SALARY)
+                                  FROM employees);
+                                  
+                                  
+                                  
+                                  
+                                  
