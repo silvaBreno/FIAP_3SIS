@@ -1,0 +1,50 @@
+VLAN 
+
+Switch>enable
+Switch#show vlan 
+
+com o comando de cima eu consigo verificar quantas portas tem, no caso 26. 
+Quero quebrar em duas redes
+
+Switch#configure terminal
+Switch(config)#vlan 2
+Switch(config-vlan)#name servidor
+
+
+Switch(config-vlan)#interface gig0/1
+Switch(config-if)#switchport access vlan 2
+Switch(config-if)#vlan 3
+Switch(config-vlan)#name lab2
+Switch(config-vlan)#interface fa0/1
+Switch(config-if)#switchport access vlan 3
+Switch(config-if)#
+Switch(config-if)#interface fa0/2
+Switch(config-if)#switchport access vlan 3
+Switch(config-if)#
+Switch(config-if)#vlan 4
+Switch(config-vlan)#name lab
+Switch(config-vlan)#interface range fa0/8-fa0/9
+Switch(config-if-range)#switchport access vlan 4
+Switch(config-if-range)#vlan 5
+Switch(config-vlan)#name wireless
+Switch(config-vlan)#interface fa0/3
+Switch(config-if)#switchport access vlan 5
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#vlan 6
+Switch(config-vlan)#name ADM
+Switch(config-vlan)#interface range fa0/17-fa0/18
+Switch(config-if-range)#switchport access vlan 6
+Switch(config-if-range)#
+
+Nesse momento está todo mundo da rede ser acessso ao roteador, ou seja, sem internet
+Portanto, precisamos configurar uma interface tronco que vai ser a interface gig0/2 que 
+está conectada ao roteador. 
+
+
+Switch(config-if-range)#
+Switch(config-if-range)#interface gig0/2
+Switch(config-if)#switchport trunk allowed vlan all -> o professor esse comando.
+
+Switch(config-if)#interface gig0/2
+Switch(config-if)#switchport mode trunk

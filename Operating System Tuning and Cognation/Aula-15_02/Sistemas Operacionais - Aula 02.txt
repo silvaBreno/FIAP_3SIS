@@ -1,0 +1,88 @@
+Evolução dos SOs
+
+4ª geração 
+
+- Computadores baseados em circuitos integardos
+- Computadores pessoais em alta
+- Computadores sofrem uma redução do preço
+- Computadores passam a ter interfaces amigáveis
+- Sistemas operacionais distribuídos surgem porque os computadores 
+possuem maiores capacidades de processamento e memória
+
+Núcleo do Sistema Operacional 
+
+O SO é formado por um conjunto de rotina ;
+As principais funções do núcleo do SO são: tratamento de interrupções
+e exceções, criação e eliminação de processos e threads, sincronização
+e comunicação entre processos e threads, escalonamento e controle dos 
+processos e threads, gerência de memória, gerência do sistema de 
+arquivos, gerência de dispositivos de entrada e saída (E/S), suporte 
+a redes locais e distribuídas, controle da utilização dos recursos do 
+sistema computacional e funções de auditoria e segurança do sistema 
+computacional.
+
+A grande diferença entre um sistema operacional e as aplicações 
+convencionais é a maneira como as rotinas são executadas em função do
+tempo. Um sistema operacional não é executado de forma linear como a
+maioria das aplicações, com início, meio e fim. Suas rotinas são 
+executadas concorrentemente em função de eventos assíncronos, ou seja,
+eventos que podem ocorrer a qualquer momento. Muitos destes eventos 
+estão relacionados ao hardware e às tarefas internas do próprio 
+sistema operacional.
+
+
+Sistemas Monoprogramáveis - executao apenas um unico programa/tarefas
+boa parte do tempo as máquinas ficavam sem nenhum processamento quando
+não estava fazendo nenhum ação. 
+   \-> Sistemas Batch - ele tem pouca interação com o usuário. Já esta 
+	tudo +/- agendado/pré programado do que vai acontecer.
+
+
+Sistemas Multiprogrmáveis (Ou sistemas multitarefas) - esse cara acaba 
+fazendo várias ações. Agora o So consegue perceber e dizer para o 
+processador que tem alguma parte ociosa e ele direciona as ações.
+	\-> Sistemas de Tempo Compartilhado - executa varios programas ao 
+	mesmo tempo e dividindo o tempo, e para o usuario ele tem a sensação 
+	de que as coisas estao acontecendo ao mesmo tempo;
+
+Sistemas com multiplos processadores - Agora ele consegue de fato 
+fazer várias ações em paralelo.
+	\-> Sistemas de Tempo Real - um sistema que responde no domínio do
+	tempo daquele processo ou situação. Ex: o sistema lê a temperatura 
+	de uma caldeira de 3 em 3 segundos.Outro exemplo: sistema que 
+	controla o freio ABS, sistema do metro que controla a velocidade 
+	do vagão do metro. Sistemas que controlam as informações dos 
+	pacientes em tempo real.
+
+
+Os primeiros SOs tinham arquitetura monolíticas, eles todo concentrados 
+em um único arquivo.
+
+Arquitetura em Camadas 
+	\-> OpenVMS e OS/2 utilizam essa tipo de arquitetura, esse tipo de
+	arquitetura permite voce realizar alterações sem impactar tanto o 
+	programa. Lembrando que esse tipo de arquitetura te tras um pouco
+	menos de desempenho porque o sistema tem a necessidade de se 
+	comunicar com as outras áreas.
+	
+Arquitetura Microkernel
+	\-> Arquitetura em módulos, eu tenho vários processos e vários 
+	módulos separados. Possuem coisas dentro e fora até do sistema.
+	Uma tendência nos sistemas operacionais modernos é tornar o núcleo
+	do sistema operacional o menor e mais simples possível. Para 
+	implantar esta ideia, os serviços do sistema são disponibilizados 
+	como processos, em que cada processo é responsável por oferecer 
+	um conjunto específico de funções, como gerência de arquivos, 
+	gerência de processos, gerência de memória e escalonamento.
+	
+Máquina Virtual
+	\->
+	
+Quais as principais diferenças entre os sistemas operacionais para 
+máquinas de grande porte (mainframes) e para computadores 
+pessoais(PCs)?
+	\->Não sobrou, nenhuma diferença pois com o passar do tempo a 
+	diferença que existia foi desaparecendo. Tudo que era legal com o
+	passar do tempo foi sendo implementado nos computados pessoal 
+	também. É claro que é uma diferença entre processamento pois os 
+	mainframes possuem muito mais capacidade.
