@@ -1,0 +1,21 @@
+Android Kotlin
+
+	Para criar um projeto seguir os próximos passos:
+	
+		1. New Project
+		2. Selecionar "Empty Activity"
+		
+		
+		- Para referenciar uma string no código. Por exemplo para alterar o "Hello World!" que estava escrito ir no Res>layout>activity_main.xml > TextView> android:text
+		e depois apagar o "Hello World"
+		
+		- Após apagar é necessário ir nos res>values>strings.xml> e adicionar: 
+			<string name="app_name">MoneyMask</string>  
+			<string name="br_currency_label">R$</string>
+			
+		
+		
+		As view do textview estão fazendo referencia ao pai dela, que no caso é o ConstraintLayout.
+		
+		-- a propriedade wrap_content obrigada ele ocupar somente o tamanho do que está escrito na string
+		-- já o match_parente ele ocupa o tamanho todo da linha da string
