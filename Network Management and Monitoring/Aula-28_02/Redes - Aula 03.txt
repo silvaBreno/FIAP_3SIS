@@ -1,0 +1,70 @@
+Switch>
+Switch>enable
+Switch#show vlan
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 2
+Switch(config-vlan)#name wireless
+Switch(config-vlan)#
+Switch(config-vlan)#
+Switch(config-vlan)#configure terminal
+Switch(config)#interface fa0/24
+Switch(config-if)#switchport access vlan 2
+Switch(config-if)#
+Switch(config-if)#^Z
+Switch#
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface gig0/2
+Switch(config-if)#switchport access vlan 2
+Switch(config-if)#^Z
+Switch#show vlan
+Switch#
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface gig0/2
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan all
+Switch(config-if)#
+Switch#
+
+feito isso precisamos configurar o ip da segunda rede vermelha que foi criada porque a rede azul já tem um endereço de ip 192.168.1.0
+
+Agora no roteador usamos os seguintes comandos:
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#
+Router(config-if)#
+Router(config-if)#interface gig0/0.1
+Router(config-subif)#
+Router(config-subif)#encapsulation dot1q 1
+Router(config-subif)#ip address 192.168.1.1 255.255.255.0
+Router(config-subif)#
+Router(config-subif)#interface gig0/0.2
+Router(config-subif)#
+Router(config-subif)#encapsulation dot1q 2
+Router(config-subif)#ip address 192.168.2.1 255.255.255.0
+Router(config-subif)#
+Router(config-subif)#
+Router(config-subif)#
+
+Para configurar um DHCP para a rede vermelha, posso utilizar o roteador
+
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip dhcp poo vlan2vermelha
+Router(dhcp-config)#network 192.168.2.0 255.255.255.0
+Router(dhcp-config)#default-route 192.168.2.1
+
+Se por exemplo o DHCP da rede azul parar de funcionar posso tb utilizar o roteador para configurar outro DHCP, mas no caso para rede azul
+
+Router(dhcp-config)#
+Router(dhcp-config)#
+Router(dhcp-config)#ip dhcp pool vlan1
+Router(dhcp-config)#network 192.168.1.0 255.255.255.0
+Router(dhcp-config)#default-rout 192.168.1.1
+Router(dhcp-config)#default-route 192.168.1.1
+Router(dhcp-config)#
