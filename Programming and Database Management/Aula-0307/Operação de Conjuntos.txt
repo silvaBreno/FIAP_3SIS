@@ -1,0 +1,15 @@
+	Conjuntos:
+	
+	A - {a, b}
+	B - {d, e}
+	
+	UNION / UNION ALL / União
+		A U B - {a,b, c, d, e}
+		A U B - {a,b, c, c, d, e}
+	INTERSECT / Intersecção
+		A n B - {c}
+	MINUS / EXCEPT / Menos / Exeção (No SQL Server) // 
+		A - B - {a, b}
+		B - B - {d, e}
+		
+	Se eu operar em conjunto eu não olho para chave

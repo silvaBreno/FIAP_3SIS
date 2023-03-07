@@ -1,0 +1,1 @@
+https://blog.jooq.org/say-no-to-venn-diagrams-when-explaining-joins/#:~:text=Conclusion%3A%20Say%20NO%20to%20Venn%20Diagrams&text=A%20JOIN%20is%20not%20strictly,diagrams%20rather%20than%20Venn%20Diagrams.
