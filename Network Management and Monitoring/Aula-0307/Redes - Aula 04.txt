@@ -1,0 +1,135 @@
+//para configurar a rede rosa
+Switch>enable
+Switch#show vlan
+Switch#
+Switch#
+Switch#
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 2
+Switch(config-vlan)#name lab2
+Switch(config-vlan)#interface fa0/1
+Switch(config-if)#switchport access vlan 2
+Switch(config-if)#interface fa0/2
+Switch(config-if)#switchport access vlan 2
+Switch(config-if)#
+
+//para configurar a rede amarela utilizando o interface range para facilitar o processo
+Switch#
+Switch#
+Switch#
+Switch#
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 3
+Switch(config-vlan)#name lab3
+Switch(config-vlan)#interface range fa0/8-9
+Switch(config-if-range)#switchport access vlan 3
+Switch(config-if-range)#
+
+//para configurar a rede verde
+Switch#
+Switch#
+Switch#configure termina
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 4
+Switch(config-vlan)#name wireless
+Switch(config-vlan)#interface fa0/24
+Switch(config-if)#switchport access vlan 4
+Switch(config-if)#
+Switch(config-if)#
+
+//para configurar a rede azul
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#vlan 5
+Switch(config-vlan)#name ADM
+Switch(config-vlan)#interface range fa0/17-18
+Switch(config-if-range)#switchport access vlan 5
+
+//para configurar a gig0/2 como trunk
+Switch#
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface gig0/2
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan all
+Switch(config-if)#
+
+
+//configurando no roteador agora
+Router>
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface gig0/0.1
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.1, changed state to up
+
+Router(config-subif)#encapsulation dot1q 1
+Router(config-subif)#ip address 192.168.1.1 255.255.255.0
+% 192.168.1.0 overlaps with GigabitEthernet0/0                --------> aqui deu overlaps pq a porta GIG0/0 estava usando o IP que eu indiquei. é só ir lá no roteador>na aba config>interface>gigabitEhternet0/0 e apagar o ipv4 e a mascara de subrede
+Router(config-subif)#
+Router(config-subif)#
+Router(config-subif)#interface gig0/0.2
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.2, changed state to up
+
+Router(config-subif)#encapsulation dot1q 2
+Router(config-subif)#ip address 192.168.2.1 255.255.255.0
+Router(config-subif)#
+Router(config-subif)#interface gig0/0.3
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.3, changed state to up
+
+Router(config-subif)#encapsulation dot1q 3
+Router(config-subif)#ip address 192.168.3.1 255.255.255.0
+Router(config-subif)#
+Router(config-subif)#interface gig0/0.4
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.4, changed state to up
+
+Router(config-subif)#encapsulation dot1q 4
+Router(config-subif)#ip address 192.168.4.1 255.255.255.0
+Router(config-subif)#
+Router(config-subif)#interface gig0/0.5
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.5, changed state to up
+
+Router(config-subif)#
+Router(config-subif)#encapsulation dot1q 5
+Router(config-subif)#ip address 192.168.5.1 255.255.255.0
+Router(config-subif)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface GigabitEthernet0/1
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#ip address  
+% Incomplete command.
+Router(config-if)#ip address  
+% Incomplete command.
+Router(config-if)#
+Router(config-if)#interface gig0/0.1
+Router(config-subif)#encapsulation dot1q 1
+Router(config-subif)#ip address 192.168.1.1 255.255.255.0
+Router(config-subif)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
