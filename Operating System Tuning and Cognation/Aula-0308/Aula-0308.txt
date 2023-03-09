@@ -1,0 +1,13 @@
+PowerShell
+
+	O Windows PowerShell® é um shell de linha de comando baseado no Microsoft .NET Framework.
+	O PowerShell® é multicloud podemos utiliar no Azure, na AWS e no google Cloud.
+	A maioria dos comando tem  tipo (verbo_nome ou verbo_substatntivo) e são chamados de Cmdlets(command-lets): 
+		\-> get - ler
+		\-> set - escrever
+	Ele tambem aceita comandos do MS-DOS, Linux e Unix. 
+	Ele permite que script sejam desenvolvidos
+	
+	Cmdlets(command-lets):
+	
+	
