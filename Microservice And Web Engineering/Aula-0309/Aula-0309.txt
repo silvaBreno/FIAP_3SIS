@@ -1,0 +1,32 @@
+Diagrama de Classes
+
+	Ele reperesenta a estrutura estatica de um sistema, mostrando as classes do sistema, seus atributos e metodos, bem como as associações e relações entre elas.
+	O diagrama auxilia o desenvolvedor a visualizar e enteder a estrutura de um sistema orientado a objetos. Utilizamos para planejar a arquitetura de um sistema,
+	identificar oportunidades de reutilização de código, e comunicar a estrutura do sistema para outros desenvolvedores e partes interessadas.
+	
+Framework
+	
+	Um framework é um conjunto de bibliotecas, classes, interfaces e padrões de projeto que fornecem uma estrutura básica para desenvolver e organizar o código de um aplicativo.
+	Um framework geralmente define a arquitetura básica de um aplicativo e fornece as ferramentas necessárias para implementar a lógica de negócios.
+	Só construa framework em ambientes fechados voltamos para um negócio privado.
+	
+Spring Boot
+	
+	É um framework de desenvolvimento de aplicativos Java que visa simplificar o processo de criação, configuração e execução de aplicativos Java de maneira rápida e fácil.
+	Ele é construído em cima do framework Spring, que é um dos mais populares e poderosos framework Java para desenvolvimento de aplicativos empresariais.
+	O Maven é um gerenciador de pacotes.
+	O jboss é um servidor dentro do projeto e é por ele que rodamos o projeto
+
+Versionamento Semântico 2.0.0 (semver)
+
+	Dado um número de versão MAJOR.MINOR.PATCH, incremente a:
+	versão Maior(MAJOR): quando fizer mudanças incompatíveis na API,
+	versão Menor(MINOR): quando adicionar funcionalidades mantendo compatibilidade, e
+	versão de Correção(PATCH): quando corrigir falhas mantendo compatibilidade.
+	Rótulos adicionais para pré-lançamento(pre-release) e metadados de construção(build) estão disponíveis como extensão ao formato MAJOR.MINOR.PATCH.
+	
+Arquitetura Java
+
+	MVC - Pattern Arquiterual 
+	
+	O controlador é responsavel por direcionar para as models
