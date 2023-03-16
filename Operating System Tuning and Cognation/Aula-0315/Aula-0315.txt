@@ -1,0 +1,27 @@
+A Microsoft retirou a ferramenta de debug, e por isso estamos utilizando a maquina virtual;
+
+
+Abrir o cmd e digitar debug na janela DOS
+
+	O debug é um ambiente integrado primitivo
+
+	O primeiro comando é o "-r" de registrador, ele mostra o conteudo dos registradores interno dos processadores/CPU;
+
+	Cada registrador do processador foi desenvolvido para ser capaz de desempenhar um papel, seja para conseguir captar um informação vindo do teclado,
+	seja para conseguir passar da placa controladora de vídeo, ou até mesmo o controlador responsavel por cuidar operadores logicos.
+
+		CS - Segmento de código (área de código)
+		SS - Segmento de pilha (área de pilha)
+		BP - Base Pointer, ponteiro da Base (área de ponteiro)
+		SD - (área de dados)
+		CS:IP - Segmento de código, junto com o ponteiro de instrução
+		DS:SI - Indice de Origem 
+		SS: SP - Segmento de Pilha e o Ponteiro de Pilha (Stack Pointer)
+		AX - Registrador Acumulador
+		
+	Cada registrador foi desenvolvido para desempenhar uma função dentro da leitura de algum código nosso.
+	
+	Para cada parte do computador eu tenho algumas interrupções de BIOS
+		 - para fazer a interface com a controladora de discos, temos o Int 13h
+		 - Para alguns registradores por exemplo o AX = ele pode trabalhar com bites tb -> EX: 0000 (os primeiros sao 00 AH - HIGH e os dois ultimos AL - LOW) 
+		 
