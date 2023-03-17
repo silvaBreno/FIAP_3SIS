@@ -1,0 +1,46 @@
+
+
+	Apache Tomcat, o que é?
+
+		Server: Representa todo o Catalina Servlet Engine (Catalina é como se fosse o motor) e é usado como um elemento nível mais alto para uma simples instância do Tomcat.
+	
+		Service: Contém uma coleção de um ou mais Connectors que compartilham uma única Engine.
+	
+		Connector: Define as classes que fazem o atual gerenciamento das requisições e respostas para uma chamada de uma aplicação cliente.
+	
+		Engine: gerencia todas as requisições recebidas por todos os connectors definidos
+	
+		Host: deifine os hots virtuais que são contidos em cada instancia do Cataline Engine. Cada Host pode ser um pai
+	
+	
+	Configuração do Apache Tomcat:
+	
+	
+		No Windows não conseguimos compartilhar o número da porta estabelecida.
+		Por padrão o Tomcat conecta-se na porta 8080 -> http://localhost:8080/
+		Se tiver uma aplicação rodando na porta, uma outra aplicação não vai conseguir rodar na mesma porta.
+		
+		Fatores básicos que precisamos controlar em um servidor: Porcentagem de Memoria, Porcentagem de CPU, Porcentagem de Disco e Rede
+		
+	Primeiro passo
+		Entrar no site https://start.spring.io/
+		Ele cria um startup basico para você criar seu projeto e as dependencias você pode adicionar depois.
+		Localiza(professor): O ideal é criar um repositorio para cada aplicação para poder separar e todo mundo fazer a mesma coisa
+		backstage.io - dar uma olhada
+		gradle e maven são gerenciados de pacotes:
+		
+		Configuração do Pacote:
+			Project: Maven
+			Language: Java
+			Sprint Boot: 2.7.9
+			Project Metadata:
+				Group: br.com.fiap
+				Artifact: folhapagamento
+				Name: folhapagamento
+				Description: Demo project for Spring Boot
+				Package name: br.com.fiap.folhapagamento
+				Packaging: WAR
+				Java: 8
+				Dependencies: Spring Boot DevTools e Spring Web
+					
+			
