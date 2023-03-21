@@ -1,0 +1,43 @@
+Arquitetura GIT 
+
+1º) Github.com
+	"Serviço git"
+	
+2º) Github.com	
+	"Serviço git"
+	Existem dois repositorios nessa situação, o que está no servidor do Git e o que está no PC Cliente 
+	-- Você tem o comando pull para puxar para o PC cliente 
+	-- Você tem o comando push para empurrar para Nuvem/Servidor do Git
+
+3º) Github.com				----------  Executa PULL e PUSH comunicando-se com o Server Réplica
+	"Serviço git" 		
+	Tem repositório
+	
+	
+	Servidor Réplica     ----------- Dois PCs conectados e não tem repositório neles
+	"On premise"
+	Roda o Client Git
+	Tem um repositório
+	
+	
+4º)	Server Git 					----------- PC cliente 
+	Enterprise								Tem um repositório também
+	Tem um repositório       
+	
+	
+	
+
+Eu tenho um branch que podemos chamar de main/master e nela estao contidos os programas prontos, direto para deploy para uso.
+Para realizar mudanças utilizamos uma segunda branch o qual podemos chamar de branch "Develop" e quando tudo estiver pronto eu vou fazer um processo chamar release
+
+
+Git Flow (ajuda as pessoas não mexerem em um local que não pode mexer! Pensa que nada impede da pessoa puxar a master e alterar na mão qualquer arquivo e isso pode acarretar em problemas caso outras pessoas estejam utilzando)
+
+Em aula realizar a criação de uma branch da develop a qual iria se chamar o Branch Feature
+
+Consigo também criar uma brench de Bug Fix para poder corrigir bugs, é literalmente uma etapa de Code Review
+
+Todas as branchs criadas a partir da develop, quando vc dá push ele destroi após termianr a tarefa
+
+Consigo também criar tb agora pensando na Main/Master, branchs Hot Fix para corrigir algo rapido que você nao pode esperar e é necessario sempre lembrar que existe um risco
+Também tem a branch de support a partir da main é literalmente para achar problemas no programa e realizar uma análise.
