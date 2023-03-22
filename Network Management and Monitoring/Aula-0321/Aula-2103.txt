@@ -1,0 +1,28 @@
+Firewall
+
+	No firewall é possível criar regras de acesso (entrada/saída)
+	
+	
+
+
+
+Router>
+Router>enable	
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#access-list 1 deny host 192.168.1.2
+Router(config)#interface gig0/2
+Router(config-if)#ip access-group 1 out
+Router(config-if)#
+
+//feito o comando de não permitir o computador 192.168.1.2 acessar o servidor, ao criar a regra, tudo que está na mesma rede que o pc 192.168.1.2 
+também será bloqueado. Portanto, é necessário permitir que os outros computadores acessem com o comando abaixo:
+Router(config-if)#access-list 1 permit any
+Router(config)#
+
+Router(config)#access-list 2 deny host 192.168.1.4
+Router(config)#access-list 2 deny host 192.168.1.5
+Router(config)#access-list 2 permit host 192.168.1.2
+Router(config)#access-list 2 permit any
+Router(config)#interface gig0/1
+Router(config-if)#ip access-group 2 in
