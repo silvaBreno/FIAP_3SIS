@@ -1,0 +1,15 @@
+Vamos criar em aula:
+
+C:\temp\FIAPdev\FIAPdev.ini
+	   \FIAPdev\bin
+	   \FIAPdev\lib
+	   
+A linguagem C e C++ são as mais próximas das linguagens que o hardware entende. Elas são utilizadas na chamadas de sistemas
+
+
+2º Parte
+
+Escalonamento de Processos (Introdução)
+	
+	Escalonamento Circular é o algoritmo mais utilizado por ter uma boa eficiacia e permite que todos os processos sejam executados
+	
