@@ -1,0 +1,6 @@
+Servicos de Apoio:
+
+	- banco de dados, armazenamento de arquivo, emails;
+	- é qualquer servico que o app consuma via rede como parte de sua operacao normal;
+	- Nunca devemos salvar arquivo no banco;
+
