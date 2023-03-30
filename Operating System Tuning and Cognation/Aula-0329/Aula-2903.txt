@@ -1,0 +1,13 @@
+Escalonamento em Tempo Real:
+
+	Os sistemas operacionais comerciais não conseguem dar a garantia que uma tarefa vai ser executada até uma quantidade de tempo estabelecida.
+	
+	Exercicio 1:
+	
+	- Escalonamento Circular com fatia de tempo (as know quantum "Q") igual a 10ut (Unidades de Tempo);
+	- Com tempo para troca de contexto desprezível (S= 0 ut)
+	- Apenas um processador
+	- Dois processos - P1 e P2 na fila de processos prontso e o tempo de CPU de cad processo é respectivamente 7 e 16 ut;
+	
+	
+	
