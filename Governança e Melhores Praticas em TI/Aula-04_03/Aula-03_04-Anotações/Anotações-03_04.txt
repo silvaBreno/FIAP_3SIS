@@ -48,7 +48,14 @@ Normas são regras, enquanto guias são boas práticas
 				\-> Consumo de Hardware - preciso ter velocidade consumindo pouco, ou seja, não posso ter um sistema que consome muito hardware
 				\-> Recursos consumidos
 				\-> Capacidade de processamento
-		
-		
-
 	
+	Slide24
+
+		Principal - Programar software, Modelar BD, Testar software, Controlar versão SW, Modelar aplicação
+		Organizacional - 
+		Suporte - Instalar Redes, Instalar servidores
+	
+	ISO 15504 (SPICE - VISÃO GERAL DO MODELO)
+		-> Essa ISO define estagios para implantar qualidade da empresa;
+		-> As empresas são auditadas e pontuadas enssas escala, sendo emitido um certificado de nível de qualidade
+			\-> Estagios (5-OTIMIZADO, 4-PREVISÍVEL,3-ESTABELECIDO,2-GERENCIADO,1-EXECUTADO,0-INCOMPLETO)
