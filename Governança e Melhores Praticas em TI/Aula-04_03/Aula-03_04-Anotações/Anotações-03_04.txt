@@ -1,0 +1,54 @@
+Normas são regras, enquanto guias são boas práticas
+
+	ISO 9126
+		->
+		
+	ISO 25010
+		-> As características de avaliação de qualidade de software que são colocadas por esta ISO, são:
+		
+			- Funcionalidade 
+				\-> Atendimento de requisitos completo e corretos
+				\-> 
+			- Compatibilidade
+				\-> Você precisa coexistir com outras aplicações, ou seja, é possível
+				que possamos chamar e se conectar com outras APIs ou serviços que estão 
+				disponíveis na internet. Exite a necessidade de se fazer uma contrato de 
+				parceria com sistemas que não sejam do seu dominio, pois caso existe a necessidade 
+				do parceiro atualizar ou deixar de manter o serviço, voce precisa ser informado.
+			- Portabilidade
+				\-> Facilidade de instalação
+				\-> Facilidade de substituição
+				\-> Facilidade de adaptação e novas plataformas
+			- Manutenabilidade
+				\-> Facilidade de análise
+				\-> Reuso
+				\-> Facilidade de mudança
+				\-> Facilidade de teste
+				\-> Modularidade 
+				\-> Tópico voltado para documentação, pensa nos pontos interessantes para se manter uma documentação atualizada. 
+					O teste é criado em cima do programa, mas sim em cima da documentação
+				
+			- Segurança
+				\-> Confiabilidade
+				\->	Manter integridade da informação e dos dados dos usuários
+				\->	Auditoria e rastreabilidade para identificar os problemas que ocorrem (do nada 
+					aparecer um dinheiro na conta de um usuario, é necessario que o banco tenha um 
+					cedula interna que verifique se existe fraudes)
+				\->	Autencidade
+			- Confiabilidade
+				\-> Facilidade de recuperar de falhas (Try-catch // Null Safety)
+				\-> Proteção contra falhas ()
+				\-> Estabilidade de processamento e resultados (Se não houver bugs o sistemas estará com estabilidade de processamento boa)
+				\-> 
+			- Usabilidade
+				\-> Facilidade de compreensão
+				\-> Facilidade de aprendizado
+				\-> Facilidade de operação
+			- Desempenho
+				\-> Consumo de Hardware - preciso ter velocidade consumindo pouco, ou seja, não posso ter um sistema que consome muito hardware
+				\-> Recursos consumidos
+				\-> Capacidade de processamento
+		
+		
+
+	
