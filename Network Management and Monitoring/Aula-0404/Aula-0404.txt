@@ -1,0 +1,59 @@
+O protocolo HTTTP por padrao ele é configurado na porta TCP80
+
+#access-list 100 deny ip host 10.0.0.2 host 172.16.1.4
+
+#interface gig0/2
+#ip access-group 100 out 
+
+
+para bloquear o pc 10.0.0.2 de solicitar o servico HTTP do servidor 172.16.1.4, segue os comandos:
+
+Router>
+Router>enable
+Router#configure terminal
+Router(config)#access-list 100 deny ip host 10.0.0.2 host 172.16.1.4
+Router(config)#interface gig0/2
+Router(config-if)#ip access-group 100 out
+Router(config-if)#
+
+Por padrão o pc 10.0.0.3 precisa liberado para fazer a mesma solicitação para o servidor 172.16.1.4, ao criar a regra acima
+ele assume que os demais também será bloqueado. Para permitir o outro PC 10.0.0.3 de enviar essa solicitação é necessário realizar 
+a configuração abaixo
+
+O protocolo DNS por padrão ele é configurado na porta UDP56
+
+Configurando o servidor DNS 172.16.1.4
+
+Vou na aba services>DNS
+Habilito o DNS Service para ON
+No campo Name digito o site: www.fiap.com.br e o endereço que eu quero associar para esse site, que no caso é 172.16.1.4 
+Clico em Add
+Faço o mesmo para o outro:
+No campo Name digito o site: www.fiap2.com.br e o endereço que eu quero associar para esse site, que no caso é 192.168.10.4
+Clico em Add
+
+O pc 10.0.0.2 vai ter acesso ao ip 192.168.10.4, mas não vai ter acesso ao DNS www.fiap2.com.br porque para fazer essa 
+requição ele precisa bater no servidor e como ele ta bloqueado, ele não vai ter acesso.
+Portanto, vou quero fazer com que o PC 10.0.0.2 tenha acesso ao DNS, mas continue sem acesso ao HTTP, para isso preciso 
+configurar o roteador da seguinte forma:
+
+Router>
+Router>
+Router>enable 
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#no access-list 100  --> uso esse comando para excluir todas as configuraçoes já feitas
+Router(config)#access-list 100 deny tcp host 10.0.0.2 host 172.16.1.4 eq 80
+Router(config)#access-list 100 permit ip any any
+Router(config)#
+
+apenas algumas informações pertinentes: 
+
+eq - equal =
+lt - less than <
+gt - greather than >
+neq - not equal 
+
+
+Na prova vai cair um cenário configurado para nós entendermos oq que vai estar acontecendo ali. 
+E depois para acrescentarmos uma regra.  ACL PADRÃO, ACL EXTENDIDO SEM TCP E UDP, E A MATERIA DE HJ TCP UDP. (tres ultimas aulas)
