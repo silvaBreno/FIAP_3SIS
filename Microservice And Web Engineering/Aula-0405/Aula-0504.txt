@@ -1,0 +1,26 @@
+Framework Spring
+	O framework Spring, é um dos frameworks Java mais conhecido e utilizado no mercado, ele implementa um grande número de funcionalidades, como injeção de 
+	dependência, persistência de dados e uma implementação para o padrão MVC para a criação de aplicações WEB.
+
+
+É interessante tem um view só para retornar as informações para o frontend
+
+
+
+Arquitetura MVC
+
+	Para uma mesma entidade eu posso ter visualizações diferentes. 
+	(Exemplo: Aluno -> pensando em um olhar das notas seria uma coisa / Aluno -> se fossemos pensar em um ponto de vista financeiro, seria outra viewmodel / 
+	Aluno -> se fosse pensar no ambito do da biblioteca e dos livros ele alugou, seria outra viewmodel)
+	
+Swagger ou atualmente conhecido como openAPI
+
+Action é um metodo que 
+
+	Livro: Domain-Driven Design: Atacando as complexidades no coracao do software. -> Autor: Eric Evans
+		   Implementando Domain-Driven Design -> Autor: Martin Fowler
+		   
+	O trabalho da Business Layer é servir como proxy entre o banco e outros serviços. O conceito de agregação trabalha acima do conceito da POO,
+	ele na verdade trabalha com a validação de todas as classes, e o conjunto destas classes chamamos de agregação, portanto, se toda a agregação estiver 
+	validada a agregação estará validada. Se algo der errado, a business layer precisa fazer o trabalho de parar o processo e até mesmo as vezes desfazer
+	os processos que foram criado e aprovados ao longo das validações.
