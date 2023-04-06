@@ -1,0 +1,50 @@
+Exercício 3 - Thread
+
+
+a) Monothread
+
+	1° req: 15ms
+	2° req:	15ms
+	3° req:	30ms + 15ms (para cada tres req precisamos fazer um de entrada e saída)
+	--------------------
+	3 req ---------- 75ms
+	N req ---------- 1000ms (=1s)
+	
+	N x 75 = 3 x 1000
+	N = 3000/75
+	N = 40 req/s se for monothread
+	
+
+b) Multithread
+	
+	1° req: 15ms
+	2° req:	15ms
+	3° req:	30ms + 15ms (para cada tres req precisamos fazer um de entrada e saída)
+		(15ms + 15ms) dentro dos 30ms da terceira req temos 15ms da 4° req e 15ms da 5°req
+	--------------------
+	5 req ---------- 75ms
+	N req ---------- 1000ms (=1s)
+	
+	N x 75 = 5 x 1000
+	N = 5000/75
+	N = 66,66 req/s se for monothread
+	
+
+Exercicio 1
+P - PARA ITENS QUE SÃO COMPARTILHADOS POR TODOS OS ThreadS DE UM PROCESSO
+T - PARA ITENS QUE SÃO PRIVATIVOS DE CADA Thread
+
+(P) Espaço de endereçamento privado
+(T) Contador de programa
+(P) Arquivos abertos
+(T) Conteudo dos registradores
+(P) Variaveis globais
+(P) Sinais (notificações assincronas) e tratadores de sinais
+(P) Tamanho maximo de buffer para operacoes de E/S
+(P) Tamanho maximo de memoria principal que pode ser alocada
+(T) Estado
+(T) Ponteiro de pilha
+(P) Espaço de endereçamento compartilhado
+(T) Pilha
+	
+	
