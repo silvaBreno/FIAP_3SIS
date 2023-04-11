@@ -1,0 +1,68 @@
+Aula 5 - inicio na página 37
+
+	Qual a sequencia que entendemos ser melhor para implantar na empresa?
+
+		Nível 2 A. Documentação de Requisitor usando backlog itens do Scrum
+		Nível 2 B. Planejamento e Controle de tarefas de projetos Scrum com uso de planilhas
+		Nível 2 F. Controle de versão de software com GIT
+		Nível 3 C. Modelagem de sistemas de informação com UML e Astah
+		Nível 3 D. Modelagem de banco de dados com Oracle Data Modeler
+		Nível 3 H. Padronização do Java na programação de backend
+		Nível 3 E. Testes unitários com JUNIT
+		Nível 4 G. Controle estatístico da produtividade dos desenvolvedores
+	
+	Existem duas abordagens para empregar e seguir o guia de práticas do CMMi(estagiada e continuada)
+	No CMMi os niveis que dão certificado são a 5 4 3 2 
+	Estagiada:
+	
+	5. Otimizado
+		\-> Foco na melhoria contínua de processos
+	4. Quantitativamente Gerenciado
+		\-> Processos são estatisticamente medidos e controlados
+		- 
+	3. Definido
+		\-> Processos estão documentados. Existe organização;.Atividades são 3 proativas no desenvolvimento de software
+		- Gerenciamento e desenvolvimento de requisitos (RDM) - Escolher o requisito
+		- Verificação e validação (VV) - Teste
+		- Revisão por pares (PR) - Definir como sua equipe vai se organizar para comparar os códigos
+		- Solução técnica (TS)
+		- Integração de produto (PI) - Padrão de documentação, de biblioteca de fontes
+		- Gestão de risco e oportunidade (RSK)
+		- Treinamento organizacional (OT) - Treinamento da Equipe
+		- Análise e tomada de decisão (DAR) - Durante um projeto acontecem problemas, um contrato deu errado, internet caiu, harware não chegou. Eles pedem que seja mapeado os principais problemas criando uma arvore de decisão de forma que seja antecipado possiveis decisões automaticas; Se a internet cair faça tal coisa, se o hardware não chegar faça tal coisa
+		- Implementação de infraestrutura (II)
+		- Processo de desenvolvimento (PAD)
+		- Gestão do processo de software (PCM)
+		
+	2. Gerenciado
+		\-> Orientação por projetos. Atividades são reativas no desenvolvimento de
+		software. A forma de gestão administrativa está definida e padronizada.
+		- Garantia de qualidade Processo (PQA)
+		- Gerenciamento do acordo de serviço com fornecedores (SAM)
+		- Estimativa (EST)
+		- Planejamento (PLAN)
+		- Monitoração e Controle (MC)
+		- Gerenciamento de configuração (CM) -> Git
+		- Governança (GOV) -> Prestação de Contas, transparência e etc...
+	1. Inicial 
+		\-> Processos não estão claramente definidos. Resultados são imprevisíveis. Atividades são reativas e pouco ou nada controladas
+	
+	A diferença entre a estagiada e a continuada preve que temos que desenvolver uma serie de praticas para trabalhar
+	
+	
+MPS.BR (modelo/melhoria de processo de software Brasileiro)
+
+	O programa CMMi não se aplica para maior parte das empresas brasileiras, por ser muito caro a certificação.
+	Para empresas menores,
+	
+	O MPS trabalha com 7 níveis para conseguir a certificação
+	
+	A(Em otimização)                 -> no CMMi equivale ao 5
+	B(Gerenciado Quantitativamente)	 -> no CMMi equivale ao 4
+	C(Definido)						 -> no CMMi equivale ao 3
+	D(Largamente Definido)           -> no CMMi equivale ao 3	
+	E(Parcialmente Definido)	     -> no CMMi equivale ao 3	
+	F(Gerenciado)                    -> no CMMi equivale ao 2
+	G(Parcialmente Gerenciado)       -> no CMMi equivale ao 2
+
+	
