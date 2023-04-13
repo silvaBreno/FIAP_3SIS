@@ -1,0 +1,6 @@
+Utilizamos as seguintes dependencias para o projeto:
+
+- Spring Web 
+- Spring Boot DevTools
+- Thymeleaf 
+- Spring Configuration Processor 
