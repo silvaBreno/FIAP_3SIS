@@ -7,7 +7,7 @@
     android:layout_marginStart="@dimen/margin_medium"
     android:layout_marginTop="@dimen/margin_medium"
     style="@style/CardView"
-    >
+   >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

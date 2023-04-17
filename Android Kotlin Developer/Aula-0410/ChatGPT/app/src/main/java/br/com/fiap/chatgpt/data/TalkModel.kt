@@ -11,3 +11,4 @@ data class AnswerModel(
     val answer: String,
     val hasShareAction: Boolean = false
 ): Serializable
+//serializable utilizado para passar um atributo de uma activity para outra, sem ele o metodo goToAnswerActivity na parte do putextra iria dar erro

@@ -4,11 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.fiap.chatgpt.R
+import br.com.fiap.chatgpt.data.TalkModel
 import br.com.fiap.chatgpt.databinding.ActivityAnswersBinding
 
 class AnswersActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAnswersBinding
+
+    private val talkModel by lazy {
+        intent.extras?.getSerializable(TALK_MODEL_KEY) as TalkModel
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,5 +37,10 @@ class AnswersActivity : AppCompatActivity() {
         )
 
         startActivity(shareIntent)
+    }
+
+    //constante estatica, é como se fosse o modificador "static" do java
+    companion object {
+        const val TALK_MODEL_KEY = "TALK_MODEL_KEY"
     }
 }
