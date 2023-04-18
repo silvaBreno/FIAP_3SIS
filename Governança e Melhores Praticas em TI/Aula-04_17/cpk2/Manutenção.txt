@@ -1,0 +1,5 @@
+Ponto de necessidade de manutenção para:
+-Corrigir o software/elimar BUGs (manutenção CORRETIVA);
+-Adaptar o software para novas regras de negócio (manutenção ADAPTATIVA);;
+-Prevenir contra possíveis problemas futuros (manutenção PREVENTIVA);
+-Alcançar a perfeição na experiência do usuário (manuteNção PERFECTIVA)
