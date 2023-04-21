@@ -1,0 +1,9 @@
+{
+	"id": 1,
+	"nome": "Monitor",
+	"descricao": "Monitor wide",
+    "valor": 10,
+	"codigo": "AAAA0000A",	
+    "quantidade": 2,	
+	"status": 1
+}

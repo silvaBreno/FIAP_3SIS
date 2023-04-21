@@ -7,34 +7,30 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fiap.produto.modelo.ProdutoModel;
 
-import jakarta.validation.Valid;
-
-//para falar para o spring que essa classe é um controller utilizamos anotações
 @Controller
 public class ProdutoController {
 	
-	@GetMapping("/create")
+	@RequestMapping("/produtos")
 	public ModelAndView index() {
-		ModelAndView modelView = new ModelAndView("produtos/create");
+		ModelAndView modelView = new ModelAndView("produtos/index");
 		
-		ProdutoModel monitor = new ProdutoModel("Monitor", new BigDecimal(300), 100, 1);
+		ProdutoModel monitor = new ProdutoModel("Monitor", new BigDecimal(300), 100, 1 );
 		
 		List<ProdutoModel> produtos = Arrays.asList(monitor);
 		modelView.addObject("produtos", produtos);
-		
-		return modelView;
+			
+		return modelView;		
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<ProdutoModel> create(@Valid @RequestBody ProdutoModel model)	{
-		
+	public ResponseEntity<ProdutoModel> create(@RequestBody ProdutoModel model){
 		return new ResponseEntity(model, HttpStatus.CREATED);
 	}
 }

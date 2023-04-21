@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form method="post" id="frmProduto">
+  <label for="id">ID:</label>
+  <input type="hidden" name="id" id="id" value="1"><br>
+
+  <label for="nome">Nome:</label>
+  <input type="text" name="nome" id="nome" value="Monitor"><br>
+
+  <label for="descricao">Descrição:</label>
+  <input type="text" name="descricao" id="descricao" value="Monitor wide"><br>
+
+  <label for="valor">Valor:</label>
+  <input type="number" name="valor" id="valor" value="10"><br>
+
+  <label for="codigo">Código:</label>
+  <input type="text" name="codigo" id="codigo" value="AAAA0000A"><br>
+
+  <label for="quantidade">Quantidade:</label>
+  <input type="number" name="quantidade" id="quantidade" value="2"><br>
+
+  <label for="status">Status:</label>
+  <input type="number" name="status" id="status" value="1"><br>
+
+
+</form>
+
+  <input type="button" onclick="salvar()" value="Enviar">
+	
+	<ul id="erros">	</ul>
+	
+	<script type="text/javascript">
+	
+	let responseEntity;
+	
+	function salvar(){
+		
+		const form = document.getElementById("frmProduto");
+		const formData = new FormData(form);
+		const jsonBody = JSON.stringify(Object.fromEntries(formData.entries()));
+		
+		const header = new Headers();
+		
+		header.append("Content-Type", "application/json");
+		
+		const requestOptions = {
+				method: 'POST',
+				headers: header,
+				body: jsonBody
+		}
+		
+		fetch("/create", requestOptions)
+			.then(response => {
+				responseEntity = response;
+				return response.json();
+			})
+			.then(data => tratarErro(data));
+	}
+	
+	function tratarErro(data){
+		if(responseEntity.ok){
+			alert("Produto Cadastrado");
+			return;
+		}
+		
+		let listaErros = document.getItensById("erros");
+		listaErros.innerHTML = '';
+		let erro = '';
+		
+		if(data.hasOwnProperty("nome"))
+			erro = `<li>${data.nome}</li>`;
+			
+		if(data.hasOwnProperty("descricao"))
+				erro += `<li>${data.nome}</li>`;
+		
+		if(data.hasOwnProperty("codigo"))
+			erro += `<li>${data.nome}</li>`;
+			
+		if(data.hasOwnProperty("quantidade"))
+			erro += `<li>${data.nome}</li>`;
+			
+		listaErros.innerHTML = erro;
+	}
+	
+	</script>	
+	
+	
+</body>
+</html>
