@@ -1,0 +1,7 @@
+Fragmentos (Fragments)
+
+Os fragmentos são miniactivities, porém não são uma Activity
+
+Os fragmentos são tratados em uma parte separada da Activity
+Podemos reutilizar os fragmentos em outras telas
+
