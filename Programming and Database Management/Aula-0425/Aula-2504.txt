@@ -1,0 +1,14 @@
+PL/SQL 
+
+ - PL/SQL é com toda certeza a linguaguem mais utilizada no mercado;
+ - O IM DB2 é compatível ao ORACLE SQL, já o Microsoft MySQL não é compatível com Oracle SQL;
+ - Posso programar exatamente como programamos no ECLIPSE no Oracle DataBase, inclusive existe um objeto JAVA lá no banco de dados;
+ - PL/SQL é juntar estrutura de programação mais SQL
+ - Estrutura anonima não é armazenada em banco de dados
+ - Package, ele armazena funções e/ou procedimentos portanto, conseguimos trabalhar com encapsulamento, morfologia e etc...
+ - Triggers, ele também é um objeto do SQL, utilizamos quando precisamos que ao acontecer um evento ele faça alguma coisa. Ex: Se atualizar o salário de algum funcionário, execute o trigger que salva os dados anteriores referentes ao salário do funcionario para caso aconteça algum erro a pessoa possa recuperar essa informação
+ 
+ 
+VARIAVEIS
+
+	- Podemos declarar no declare e no begin
