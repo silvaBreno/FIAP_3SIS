@@ -1,0 +1,49 @@
+SCRUM
+
+TOGAF (The Open Group Architecture Framework)
+
+	Permite se conectar com a governança que nada mais é do que atender os interesses dos acionistas
+	O TOGAF é composto por fases:
+		- Preliminar: onde trabalho, para quem trabalho, para quem vende e quem compra.
+		- Visão da Arquitetura: onde eu seleciono alguns assuntos que são mais importante para resolver
+		- Arquitetura de Negócio;
+		- Arquitetura dos sistemas;
+		- Arquitetura da Tecnologia;
+		- Oportunidades e Soluções: Iremos utilizar o Azure Boards
+		- Plano de migração;
+		- Implementação e Governança;
+		- Gerenciamento de Mudanças; 
+		
+	
+	Fase Preliminar: momento que vamos conhecer a empresa e montar alguns diagramas de como as coisas funcionam
+		- Entender a missão, visão, valores e objetivos
+		
+		Minha:
+		Missão: Desenvolver soluções de software e bancos de dados, e dar suporte técnico.
+		Visão: Trabalhar sobre plataformas Salesforce e SAP, desenvolvendo customizações para clientes nas linguaguens das duas plataformas, em JAVA, PHP e Android, conforme a situação em âmbito nacional 
+		Objetivos: Estar entre as 30 melhores software houses do Brasil
+		Metas: Entre as 30 melhores em 13 anos.
+		
+		
+		do grupo:
+		Missão - Desenvolver soluções de software e bancos de dados para clientes e dar suporte técnico pós-implantação
+		Visão - Atendimento em âmbito nacional, plataformas Salesforce e SAP, desenvolvimento de customizações nas linguagens das duas plataformas, JAVA, PHP e Android
+		Objectivos - Estar entre as melhores software houses do Brasil
+   		Metas - Entre as 30 melhores em 13 anos
+
+	Fase Visão da Arquitetura - Ferramenta ARCHI / ARCHIMATE:
+	Quadros de cobertura de soluções são importantes de serem desenhados
+	O resultado dos estudos precisam ser documentados e guardados entre os requisitos em um desenho de arquitetura.
+	
+	
+	No ARCHI:
+	
+	- File > New > trocar o nome da pasta (3SIS-SI-Suporte)
+	- do lado direito cor roxa(visão da arquitetura)
+	- cor verde (infraestrutura)
+	- cor amarelo (arquitetura de negócios)
+	- azul (arquitetura de sistemas)
+	
+	
+	
+	
