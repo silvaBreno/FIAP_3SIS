@@ -1,0 +1,60 @@
+- Configurando ACLs e VLANs -
+
+No switch: 
+
+1) Configurando a VLAN AMARELA
+Switch>
+Switch>enable
+Switch#configure terminal
+Switch(config)#vlan 2
+Switch(config-vlan)#name AMARELA
+Switch(config-vlan)#interface range fa0/1-10
+Switch(config-if-range)#switchport access vlan 2
+
+2) Habilitando o roteador para trabalhar no modo VLAN
+Switch(config-if-range)#interface gig0/1
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk allowed vlan all
+
+3) Configuando a VLAN VERDE
+Switch#
+Switch#configure terminal
+Switch(config)#vlan 3
+Switch(config-vlan)#name VERDE
+Switch(config-vlan)#interface range fa0/10-24
+Switch(config-if-range)#switchport access vlan 3
+
+4) Descrever e visualizar as VLANs que criamos
+Switch#show vlan
+
+No roteador: 
+
+1) Habilitando o porta gig0/0.2 para reconhecer pacote de dados que saiam da vlan número 2
+Router#configure terminal
+Router(config)#interface gig0/0.2
+Router(config-subif)#encapsulation dot1q 2
+Router(config-subif)#ip address 200.200.200.1 255.255.255.0
+
+2) Habilitando o porta gig0/0.3 para reconhecer pacote de dados que saiam da vlan número 3
+Router(config-subif)#
+Router(config-subif)#interface gig0/0.3
+Router(config-subif)#encapsulation dot1q 3
+Router(config-subif)#ip address 222.222.222.1 255.255.255.0
+Router(config-subif)#
+
+3) Configurando a interface do roteador. Ligando a interface
+Router(config-subif)#interface gig0/0
+Router(config-if)#no shutdown
+
+4) Criando ACLS / Regras. Sendo a regra criada: 
+
+Política de Segurança:
+Bloquear acesso do host 200.200.200.5 ao serviço HTTP (porta TCP 80) no servidor 222.222.222.5.
+Todos os demais acessos Deverão ficar liberados.
+
+Router(config)#configure terminal
+outer(config)#access-list 100 deny tcp host 200.200.200.5 host 222.222.222.5 eq 80
+Router(config)#access-list 100 permit ip any any
+Router(config)#
+Router(config)#interface gig0/0.2
+Router(config-subif)#ip access-group 100 in
