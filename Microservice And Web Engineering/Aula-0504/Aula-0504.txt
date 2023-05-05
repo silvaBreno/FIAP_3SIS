@@ -1,0 +1,38 @@
+Instalamos no projeto as dependencias do JPA e do banco Oracle no arquivo pom.xml do projeto
+
+Sendo: 
+	- Oracle Driver 
+	- Spring Data JPA 
+	
+	 <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc8</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+	
+Dentro do arquivo application.properties incluimos as seguintes informações:
+
+	server.port=8080
+	# JPA
+	spring.jpa.database-platform=org.hibernate.dialect.Oracle10gDialect
+	spring.jpa.hibernate.ddl-auto=update  -->
+	spring.datasource.url=jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL --> diz onde está o banco Oracle da FIAP
+	spring.datasource.username=xxx --> Usuário (o usuário precisa ter permissão para rodar algumas coisas inclusive para ter funções de DDL "inserir, deletar coisas da tabela")
+	spring.datasource.password=xxx --> Senha do usuário
+	spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver --> nome da classe do driver
+	spring.datasource.testWhileidle=true --> imagina que a aplicação pode ficar ociosa e ela não fica 100% do tempo conectada com o servidor. 
+	spring.datasource.validationQuery=select 1 --> Se retornar uma conexão, significa que conseguimos fazer algo no servidor e que ainda estamos conectados
+	spring.datasource.maxActive=3 --> aqui diz que podemos ter no máximo três conexões de pessoas ativas diferentes
+	
+Iremos criar um novo package para refletir as classes que vão estar no banco, iremos chamar de entity
+
+a tag @Entity verificar se no banco tem alguma tabela com o nome da classe, e se alguma coluna para criar.
+a tag @Id diz que aquele atributo é um , ou seja, uma primary key / campo identificador.
+	
+	
+	
