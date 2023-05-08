@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github/constants/theme.dart';
-import 'package:github/screens/search_screen.dart';
+import 'package:github/screens/RepoDetailScreen.dart';
 
 void main() {
   runApp(const GitHubApp());
@@ -16,7 +16,8 @@ class GitHubApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: themeLight,
       darkTheme: themeDark,
-      home: const SearchScreen(),
+      home: const RepoDetailScreen(),
+      //const SearchScreen(),
     );
   }
 }

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:github/components/all.dart';
-import 'package:github/components/app_bar.dart';
-import 'package:github/components/avatar.dart';
-import 'package:github/components/text.dart';
 import 'package:github/constants/typography.dart';
 
 import '../mocks/repositories_mock.dart';
