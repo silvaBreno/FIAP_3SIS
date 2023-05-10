@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:githubrepo/components/all.dart';
+import 'package:githubrepo/constants/spacings.dart';
+
 import '../constants/typography.dart';
 import '../mocks/repositories_mock.dart';
 import '../models/repository.dart';
@@ -28,17 +32,17 @@ class _RepoDetailScreenState extends State<RepoDetailScreen> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 const CustomDivider(
-                  height: Spacings.XL,
+                  height: Spacings.xl,
                 ),
                 SizedBox(
-                  height: Spacings.XXXL,
-                  width: Spacings.XXXL,
+                  height: Spacings.xxxl,
+                  width: Spacings.xxxl,
                   child: CustomAvatar(
                     avatarUrl: repository.owner?.avatar,
                   ),
                 ),
                 const CustomDivider(
-                  height: Spacings.XL,
+                  height: Spacings.xl,
                 ),
                 const CustomText(
                   text: 'Repositório',
@@ -49,7 +53,7 @@ class _RepoDetailScreenState extends State<RepoDetailScreen> {
                   style: TypographyType.body,
                 ),
                 const CustomDivider(
-                  height: Spacings.XL,
+                  height: Spacings.xl,
                 ),
                 const CustomText(
                   text: 'Dono do Repositório',
@@ -60,10 +64,10 @@ class _RepoDetailScreenState extends State<RepoDetailScreen> {
                   style: TypographyType.body,
                 ),
                 const CustomDivider(
-                  height: Spacings.XL,
+                  height: Spacings.xl,
                 ),
                 const CustomText(
-                  text: 'Dono do Repositório',
+                  text: 'Descrição',
                   style: TypographyType.caption,
                 ),
                 CustomText(

@@ -1,0 +1,9 @@
+{
+    "configurations": [
+        {
+            "name": "GitHub",
+            "type": "dart",
+            "request": "launch",
+        }
+    ]
+}
