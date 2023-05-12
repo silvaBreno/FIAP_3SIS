@@ -1,0 +1,4 @@
+Serão duas APIs:
+
+animal e tutor seria outro api só;
+o restante será uma API para trabalhar com agendamento;
