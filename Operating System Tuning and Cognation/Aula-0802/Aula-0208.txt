@@ -1,0 +1,36 @@
+Gerencia de Memória
+
+	- Depois do processador a memória é o componente mais importante do computador;
+	
+
+	Hierarquia de Armazenamento
+	
+	Em um computador, o armazenamento de dados é realizado em vários tipos de dispositivos. 
+	Os dispositivos são classificados, principalmente, de acordo com as seguintes características:
+		-> Tempo de acesso
+		-> Velocidade de Acesso
+		-> Custo por unidade de armazenamento (byte)
+		-> Capacidade de Armazenamento
+		
+	Distribuição dos Dispositivos de Armazenamento
+	
+		-> registradores
+		-> cache interna 
+		-> cache externa
+		-> memória principal
+		-> disco magnetico
+		-> unidade de fita e disco óptico
+		
+	A memória cache é implementada com Portas Lógicas, ao contrario da memoria RAM que é implementada com um sisteminha RC, 
+	o qual você precisa fornecer uma tensão para armazenamento ou mandar um sinal para um sinal de nível logico alto (1).
+	
+	Armazenamento Primário
+	
+	RAM (Random Access Memory): Memória de escrita e leitura utilizada para o armazenamento temporário dos dados. A memórica RAM é volátil,
+	isto é, seu conteúdo é perdido quando o computador é desligado.
+	
+	
+	ROM (Read Only Memory): Memória utilizada para armazenar dados e instruções permanentes, que o computador deverá executar logo 
+	após ser ligado ou reiniciado.
+	Classificam-se como memória ROM: PROM (Programmable ROM), EPROM (Erasable PROM) e EEPROM (ou E²PROM) (Electrically EPROM).
+	
