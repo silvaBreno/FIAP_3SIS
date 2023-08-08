@@ -1,0 +1,33 @@
+SCRUM 
+
+-> Product Backlog 
+	\-> planejamento de release / plano de liberação
+	\-> diz quais são as tarefas que precisam ser realizadas
+	\-> aqui tem as previsões de entrega e quantas sprints tem para serem feitas, justamente para termos uma previsão de conclusão do projeto
+	\-> Aqui estou fazendo levantamento de requisitos, e não tenho a certeza de quanto tempo vai demorar para fazer o levantamento... 
+	\-> Depois no planejamento eu já tenho as tarefas, quem vai fazer, quem vai desenvolver e até que horas precisamos entregar
+	
+-> Sprint Backlog
+	\-> Planejamento de Sprint
+	\-> ações/tarefas de uma Sprint, aqui diz quais as tarefas que estão planejadas para aquela determinada Sprint
+	\->
+	
+-> Sprint
+	\-> Normalmente tem a duração de 2 a 4 semanas
+	\-> Sempre tem uma reunião diária (daily), normalmente tem 15min 
+
+-> Sprint Review (revisão de Sprint)
+	\-> Produto ou Funcionalidade Concluída
+	
+->	Scrum Básico é formado por PO, Scrum Master e Dev Squad;
+
+
+Passo a Passo
+
+
+1 - https://dev.azure.com/
+2 - ir na opcao start free
+3 - Clicar "criar uma conta"
+4 - entrar com o login da FIAP
+5 - para habilitar a aba avanced, ir em Boards>Process>Scrum e voltar para o projeto. 
+6 - Inserir nome do proejto e descrição, e colocar versao Git e work item process Scrum
