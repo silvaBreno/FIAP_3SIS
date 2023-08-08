@@ -1,0 +1,21 @@
+drop sequence seq_dept;
+create sequence seq_dept
+start with 280
+increment by 10;
+
+delete departments where  department_id > 270;
+
+set serverout on
+
+accept p_dn prompt 'Informe o nome do departamento'
+declare
+   v_dn departments.department_name%type := initcap('&p_dn');
+begin
+   insert into departments
+   values (seq_dept.nextval,v_dn,null,null);
+   
+   dbms_output.put_line(sql%rowcount || ' linha inserida');
+   commit; 
+end;
+/
+select * from departments;
