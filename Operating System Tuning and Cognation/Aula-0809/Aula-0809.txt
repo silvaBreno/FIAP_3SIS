@@ -1,0 +1,15 @@
+Memória Virtual
+
+	- Benefícios: 
+		Percepção, por parte de programadores e de usuários, de que a quantidade de memória potencialmente disponível é maior do 
+		que a realmente existente no sistema.
+	
+	
+	- Implementação:
+		
+		Paginação: Técnica na qual o espaço de endereçamento virutal é divido em blocos, chamados unidades de alocação, de 
+		tamanho fixo e posição fixa, geralmente de pequeno tamanho (4kB ou 8 kb), aos quais se associa um número. O sisema operacional
+		efetua um mapeamento das unidades de alocação em endereços de memória física, gerenciando quais unidades de alocação estão presentes
+		na memória física e quais unidades de alocação estão nos arquivos de troca.
+		
+	Disco mapeado em memória RAM
