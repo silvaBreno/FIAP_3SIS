@@ -1,0 +1,158 @@
+Docker 
+
+Na aula de hoje vamos fazer duas coisas:
+
+1) Criar um BD - Container
+2) Criar um Proxy Reverso
+
+Um dos grandes problemas ao desenvolvermos é a
+
+
+
+Por que Docker?
+
+Docker Image
+
+Docker Image é o artefato Docker que especifica como os container deversão ser criados. Isso inlui a versão do SO, bibliotecas e binários da aplicação.
+
+Docler Fluxo
+
+ dockerfile -> docker iamge -> docker container
+ 
+ (JDK e JRE) -------> CAI NA PROVA, SABER CONCEITO DO QUE É
+ 
+ Dockerfile:
+ 
+	- é necessário fazer um build do dockerfile para ser criado um dockerfile;
+	- é onde eu implento as coisas que eu preciso, e um vez compilado eu crio a imagem docker
+
+ Docker Image:
+ 
+	- e quando eu for usar a imagem ela vira o docker container
+	
+
+ Alpine é um SO com menos de 40mega
+ 
+ Docker Image - Tags
+ 
+ As imagens Docker suportam o versionamento por meio de tags. Cada tag pode indicar uma versão 
+ diferente de compilação, tecnologia, arquitetura de computador.
+ 
+ 
+ Criando o MySQL dentro do docker
+ 
+ 1)docker pull mysql
+ 2)esperar baixar
+ 3)docker run -e MYSQL_ROOT_PASSWORD=SENA-SUPER-FORTE -d mysql
+ 
+ 
+ Se eu quiser ver todas as imagens que eu tenho na maquina rodo o comendo: docker image ls
+ Se por acabo eu quiser apagar a imagem eu uso o comando: docker image rm mysql  (aqui o rm é de remove)
+ 
+	
+ 4) docker run --name phpmyadmin -d -e MYSQL_ROOT_PASSWORD=SENA-SUPER-FORTE --link quizzical_kare:db -p 8080:80 phpmyadmin	
+ 
+ 
+ ---------------- 2 parte da aula ---------
+ 
+ 1) excluir os containers criados
+ 2) e rodar os seguiuntes comandos para criar novamente os containers:
+ 
+ 3)docker run --name srv-mysql -e MYSQL_ROOT_PASSWORD=SENA-SUPER-FORTE -d mysql
+ 
+ 4)docker run --name phpmyadmin -d -e MYSQL_ROOT_PASSWORD=SENA-SUPER-FORTE --link srv-mysql:db -p 8080:80 phpmyadmin
+ 
+ 5) Cria um diretório para guardarmos os dados do MySQL
+     mkdir C:\Projetos\MySql
+ 6) Excluir o container atual:
+    docker container rm srv-mysql
+
+ 7) A opção -v mapeia o volume para a pasta acima
+    docker run --name srv-mysql -v C:\Projetos\MySql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=SENA-SUPER-FORTE -d mysql
+ 
+ 8) Entrar no portal do php e ver se conecta usando a senha e o login
+  
+ 9) Abrir o Azure Data Studio 
+ 10) Baixar a extensao MySQL
+ 11) apos o download, criar uma conexao com o banco SQL na primeira opcao do lado esquerdo
+ 12) preeencher os dados do lado direito:
+ 
+   tipo de conexao: MySQL
+   server name: localhost
+   username: root
+   senha:SENA-SUPER-FORTE
+   
+ 13) ao clicar o conectar vai dar timeout pq precisamos conectar a porta do container do mysql com o data studio
+ 
+ 14) para fazer a conexao da porta eu preciso, excluir o container mysql e rodar o comando:
+	docker run --name srv-mysql -v C:\Projetos\MySql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=SENA-SUPER-FORTE -p 3306:3306 -d mysql
+
+ ---------------- Terceira Parte da Aula -------------
+ 
+ Criando um proxy reverso, que vai serir como um WAF ( WEB APPLICATION FAREWALL )
+ 
+ 1) Criar as pastas de volume:
+		mkdir C:\Projetos\App1
+		mkdir C:\Projetos\App2
+		
+ 2) Cria o arquivo index.html para o app 1
+		echo "<html><h1>App 1</h1><html/>" >>  C:\Projetos\App1\index.html 
+
+ 3) Cria o arquivo index.html para o app 2
+		echo "<html><h1>App 2</h1><html/>" >>  C:\Projetos\App2\index.html 
+	
+ 4) Cria a app1
+		docker run --name app1 -v C:\Projetos\App1\:/usr/share/nginx/html:ro -d nginx
+
+ 5) Cria a app2
+		docker run --name app2 -v C:\Projetos\App2\:/usr/share/nginx/html:ro -d nginx
+		
+ 6) Cria a pasta para arquivo de configuração do proxi reverso
+		mkdir C:\Projetos\ProxyReverso
+		
+ 7) Cria o arquivo de configuração do proxy reverso
+
+	echo "upstream app1 {
+		server        app1:80;
+	}
+	
+	upstream app2 {
+		server        app1:80;
+	}
+	
+	server {
+		listen        80;
+		location /app1 {
+			proxy_pass  http://app1;
+		}
+
+		location /app2 {
+			proxy_pass  http://app2;
+			}
+	}" >>  C:\Projetos\ProxyReverso\proxy.conf
+	
+	Cria o container para servir de proxy reverso
+docker run --name proxy -v C:\Projetos\ProxyReverso\proxy.conf:/etc/nginx/nginx.conf:ro -p 80:80 -d nginx
+
+ 
+
+Cria uma rede
+
+ 
+
+docker network create vnet-apps
+
+ 
+
+Conecta o container app1 à rede
+docker network connect vnet-apps app1
+
+ 
+
+Conecta o container app2 à rede
+docker network connect vnet-apps app2
+
+ 
+
+Conecta o container proxy à rede
+docker network connect vnet-apps proxy
