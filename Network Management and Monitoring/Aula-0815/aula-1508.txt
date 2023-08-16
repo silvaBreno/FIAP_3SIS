@@ -1,0 +1,20 @@
+Caso o servidores DNS configurados caiam, eu posso configurar um novo servidor externo da própria operadora, ou um externo como por exemplo:
+- o do Google (DNS: 8.8.8.8);
+
+Router>
+Router>
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip dhcp pool verde
+Router(dhcp-config)#fefdefault-route 200.200.200.1
+Router(dhcp-config)#dednetwork 200.200.200.0 255.255.255.128
+Router(dhcp-config)#dns-server 8.8.8.8
+
+e dps configurar a interface configurada com o servidor novo
+
+Router(config)#interface GigabitEthernet3/0
+Router(config-if)#ip address 8.8.8.1 255.0.0.0
+Router(config-if)#ip address 8.8.8.1 255.0.0.0
+Router(config-if)#
+Router#
