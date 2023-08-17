@@ -1,0 +1,149 @@
+DOCKER
+
+EXEMPLO-01) a ideia era criar um projeto frontend
+
+Dentro do dockerfile criado no VSCODE
+
+- para criar a imagem mais recente do nginx usamos o "nginx:lastest"
+
+FROM  nginx:latest
+
+- usamos esse caminho para usar jogar a página criada para dentro do container
+COPY ./index.html /usr/share/nginx/html/
+
+
+Abrir o terminal para rodar o código acima:
+
+rodar o comando: 
+
+docker build . -t site-estatico:v1
+
+docker build -> significar que eu quero buildar o docker
+
+. -> significar que eu quero builda o arquivo desse diretorio
+-t -> tag (nome da imagem) 
+site-estatico:v1 -> nesse caso é v1 porque é apenas a primeira versão da página que vamos criar
+
+dps disso podemos rodar o comando: 
+
+docker image ls  -> para saber se o criamos a imagem
+
+dps disso podemos rodar o comando: 
+
+docker container ls -> para saber se tem algum container sendo rodado
+
+dps disso podemos rodar o comando: 
+
+docker run --name site -p 80:80 -d site-estatico:v1
+
+docker run para rodar 
+
+--name pq eu quero chamar de site
+
+-p 80:80 para dizer que quero conectar na porta 80
+
+-d para soltar o terminal e eu continuar podendo utilizar ele
+
+site-estatico:v1 que é o nome da minha imagem
+
+--------------------
+
+se eu fizer alguma alteração no arquivo index.html eu preciso parar o conteiner e dps destruir ele
+
+docker container stop site  -> utilizamos para parar o container
+
+docker container rm site -> utilizamos para destruir o conteiner
+
+Após destruir o container, eu preciso copiar o CSS para dentro no arquivo docker:
+
+FROM  nginx:latest
+
+COPY ./index.html /usr/share/nginx/html/
+COPY ./style.css /usr/share/nginx/html/
+
+e apos inserir a linha acima no arquivo docker, eu preciso buildar novamente o container para poder trazer as alterações: 
+
+docker build . -t site-estatico:v1
+
+E dps de buildar, eu posso dar o comando RUN novamente:
+
+docker run --name site -p 80:80 -d site-estatico:v1
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+EXEMPLO-02) Agora vamos criar um projeto backend
+
+- Criamos um arquivo index.js
+
+Dps rodamos no terminal o comando:
+
+npm install
+
+Dps rodamos  o comando:
+
+npm init -> para criar o projeto e as pastas
+
+e ele faz algumas perguntas (dei enter na maioria das coisas):
+
+PS D:\Projetos\Exemplo-02> npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (exemplo-02)
+version: (1.0.0)
+description: Teste
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+About to write to D:\Projetos\Exemplo-02\package.json:
+
+{
+  "name": "exemplo-02",
+  "version": "1.0.0",
+  "description": "Teste",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes)
+
+
+
+Feito isso preciso rodar o comando:
+
+npm install express -> instalar o pacote npm para que é um pacote e é responsavel gerenciar as requisoções HTTP.
+
+Após baixar a biblioteca, eu preciso passar as informações para o index.js:
+
+var express = require('express');
+var app = express();
+app.get('/', function (req, res) {
+    let dados = {
+        nome: "José",
+        data: new Date()
+    }
+    res.end( JSON.stringify(dados));
+})
+var server = app.listen(8080, function () {
+   var host = server.address().address
+   var port = server.address().port
+   console.log("Example app listening at http://%s:%s", host, port)
+})
+
+
