@@ -1,0 +1,61 @@
+Estratégias para Susbtituição de Páginas
+
+Exercicio 5)
+
+a) FIFO
+
+M0: 0 -> 2
+M1: 7 -> 5
+M2: 6 -> 0
+M3: 4 -> 6
+M4: 3
+
+Fp: 9
+
+
+b) LRU
+
+M0: 0
+M1: 7
+M2: 6
+M3: 4
+
+Fp: 10
+
+
+--------
+
+
+FIFO Circular (Clock)
+
+-> Linux usa esse sistema 
+-> Sempre que eu ando o ponteiro para a próxima página, eu troco o bit R para 0, justamente para não termos um erro de Software.
+
+FIFO com Buffer de Páginas ou FIFO de Segunda Chance
+
+-> Esse FIFO ele faz página percorrer duas filas, uma fila do buffer e a outra fila da segunda chance.... 
+-> Se a págnia chegar até o inicio da fila, significa que ngm está chamando ela e portanto, ela não voltou para o final
+-> Portanto, se ela chegar no inicio da fila, ela vai para outra fila para ter uma segunda chance....
+-> Se mesmo assim, na fila da segunda chance ela não for utilizada...
+-> e ela chegar no inicio da segunda fila, o algoritmo infere que podemos tirar ela da memória.
+
+
+
+---------------------------
+
+7)
+
+SITUACAO 1
+
+tempo exec app = tempo para exec instruções + tempo para falta de paginas
+40s = tei + 10000 x 2ms
+40s = tei + 20s
+tei = 20s
+
+SITUACAO 2 (2xRAM)
+
+tea = 20s + 5000x2ms = 30s
+
+
+
+
