@@ -146,4 +146,66 @@ var server = app.listen(8080, function () {
    console.log("Example app listening at http://%s:%s", host, port)
 })
 
+dps disso rodo um npm install para garantir que está tudo certo:
+
+npm install
+
+
+e dps para rodar o arquivo eu dou o comando: 
+
+node index.js
+
+
+no arquivo Dockerfile:
+
+#Node server
+FROM node:16-alpine as node-server                             -> aqui eu dei um apelido para a imagem do alpine
+WORKDIR /usr/src/app                                           -> aqui eu passo o diretorio q eu quero trabalhar
+COPY ./package.json .                                          -> aqui eu to copiando o arquivo para o diretorio acima
+RUN npm install --production --silent && mv node_modules ../   -> --production o production instala os pacotes de forma otimizada //--silent é para eu n exibir tanto log no console // mv node_modules ../ significa que após o npm install criar a pasta node_modules que eu quero mover a pagina para um pasta acima
+COPY index.js .
+
+
+#Final image
+FROM node:12-alpine
+WORKDIR /usr/src/app
+COPY --from=node-server /usr/src /usr/src                       -> aqui eu estou copiando a imagem node-server que utiliza o caminho /usr/src e estou copiando a imagem final 12-alpine para o caminho anterior da pasta que tb é /usr/src
+EXPOSE 8080                                                     -> aqui estou expondo a posta 8080
+CMD ["node","index.js"]                                         -> aqui é um comando que diz que toda vez q eu roda o comando node no terminal ele vai executar o arquivo index.js
+ 
+ 
+ 
+Dps para buildar a imagem eu utilizo o comando: 
+
+
+docker build . -t api:v1
+
+E dps para subir o serviço, rodo o comando: 
+
+docker run -d -p 8080:8080 api:v1
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+EXEMPLO-03) Para criar uma API em dotnet
+
+para testar se eu tenho o dotnet instalado na maquina eu rodo o comando no terminal: 
+
+dotnet --version
+
+para criar um projeto na linha de comando em dotnet usamos o comando no terminal: 
+
+dotnet new webapi -n tempoapi (a tag -n é para nomear o projeto)
+
+para buildar o projeto usamos o comando: 
+
+dotnet build tempoapi
+
+dps de buildar eu preciso rodar o projeto com o código: 
+
+dotnet run --project tempoapi
 
