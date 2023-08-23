@@ -1,0 +1,53 @@
+Criptografia
+
+
+	\-> É codificar uma informação;
+	\-> É usada para garantir os seguintes pilares: 
+		 1. Confiabilidade;
+		 2. Integridade;
+		 3. Disponibilidade;
+		 
+	\-> Critografia Assimétrica, chaves diferentes são utilizadas para criptografar e para decriptar
+	
+	
+				CHAVE PUBLICA                       CHAVE PRIVADA
+		texto -----------------:> texto codificado ------------------:> texto normal
+				(criptografar)                      (decriptografar)
+	
+	
+	Antes o pessoal utilizava muito telnet para conseguir se conectar com outros aparalhos, 
+	hoje em dia o pessoal está utilizando o ssh.
+	
+	Se eu for na linha de comando e digitar ssh junto com ip do roteador que eu quero me conectar eu consigo acessar.
+	
+	
+	Agora no arquivo do packet tracer dessa aula
+	
+	Vou no roteador e passo os comandos abaixo:
+	
+	No Router0:
+	
+	Router>
+	Router>enable
+	Router#configure terminal
+	Enter configuration commands, one per line.  End with CNTL/Z.
+	Router(config)#hostname lab_902
+	lab_902(config)#ip domain-name aula06
+	lab_902(config)#crypto key generate rsa
+	The name for the keys will be: lab_902.aula06
+	Choose the size of the key modulus in the range of 360 to 4096 for your
+	General Purpose Keys. Choosing a key modulus greater than 512 may take
+	a few minutes.
+
+	How many bits in the modulus [512]: 512
+	% Generating 512 bit RSA keys, keys will be non-exportable...[OK]
+
+	lab_902(config)#line vty 0 15
+	*Mar 1 0:9:49.341: RSA key size needs to be at least 768 bits for ssh version 2
+	*Mar 1 0:9:49.360: %SSH-5-ENABLED: SSH 1.5 has been enabled
+	lab_902(config-line)#login local
+	lab_902(config-line)#transport input ssh
+	lab_902(config-line)#username admin secret fiap
+	lab_902(config)#
+	
+	dps vou no computador
