@@ -4,13 +4,14 @@ class MyHomePage extends StatefulWidget {
   final String title;
   final int counter;
   final VoidCallback onIncrementPressed;
+  final VoidCallback onDecrementPressed;
 
-  const MyHomePage({
-    super.key,
-    required this.title,
-    required this.counter,
-    required this.onIncrementPressed,
-  });
+  const MyHomePage(
+      {super.key,
+      required this.title,
+      required this.counter,
+      required this.onIncrementPressed,
+      required this.onDecrementPressed});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -38,10 +39,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: widget.onIncrementPressed,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: widget.onIncrementPressed,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          FloatingActionButton(
+            onPressed: widget.onDecrementPressed,
+            tooltip: 'Decrement',
+            child: const Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }

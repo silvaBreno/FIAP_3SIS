@@ -10,3 +10,7 @@ sealed class CounterEvent extends Equatable {
 class IncrementEvent extends CounterEvent {
   const IncrementEvent();
 }
+
+class DecrementEvent extends CounterEvent {
+  const DecrementEvent();
+}

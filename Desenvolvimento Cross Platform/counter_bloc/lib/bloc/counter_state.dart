@@ -18,3 +18,7 @@ final class CounterInitial extends CounterState {
 class IncrementState extends CounterState {
   const IncrementState({required super.counter});
 }
+
+class DecrementState extends CounterState {
+  const DecrementState({required super.counter});
+}
