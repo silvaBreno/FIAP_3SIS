@@ -1,0 +1,32 @@
+Sistemas Operacionais
+
+Bibliotecas de Ligação Dinâmica
+
+
+	
+Nos S.O's os arquivos podem ser de dois tipos: 
+
+	- Programas de Aplicação (.exe);
+	- Bibliotecas de Ligação Dinâmica (.dll) "DLL - Dynamic Link Library";
+	
+Ligação Estática x Dinâmica
+
+Quando o compiladoor não tem disponivel a função disponivel no codigo-fonte, o compilador inclui em uma tabela interna, que contem os simbolos
+externos, e por conta disso o compilador precisa da declaração desta função, conhecer seus parâmetros de entrada e seu valor de retorno.
+
+Ligação Estática
+
+Após a compilação, no caso de uma função ligação estática, o editor de ligação (linker) busca esta função em uma arquivo objeto .obj 
+(ou em uma biblioteca estática, arquivo .lib, que é uma coleção de arquivos .obj) e a inclui no arquivo executável (.exe).
+
+Ligação Dinâmica
+
+No caso da ligação dinâmica, o editor de ligação (linker) simplesmente usa as informações da declaração external da função para montar algumas 
+tabelas internas ao arquivo executável (.exe).
+
+Quando o arquivo executável (.exe) é carregado na memória, a primeira operação que ele efetua é carregar na memória todas as DLLs de que ele 
+precisa (exceto, claro, se estas DLLs já estiverem carregadas na memória). Durante este processo de carregamento das DLLs, as tabelas internas 
+citadas acima são preenchidas com os endereços das funções que estão na memória. O programa de aplicação só inicia sua execução se esta operação 
+tiver sido realizada com sucesso.
+
+
