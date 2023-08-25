@@ -1,0 +1,45 @@
+docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 -p 5672:5672 rabbitmq:3-management
+
+a primeira porta é 15672 porta web (interface) 
+e a segunda porta é a porta que a nossa aplicação (5672) vai usar para se conectar para fila
+
+---- já dentro do visual code ---
+
+
+using System.Text;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
+
+
+var factory = new ConnectionFactory { HostName = "localhost" };
+using var connection = factory.CreateConnection();
+using var channel = connection.CreateModel();
+channel.QueueDeclare(queue: "hello",
+                     durable: false,
+                     exclusive: false,
+                     autoDelete: false,
+                     arguments: null);
+Console.WriteLine(" [*] Aguardando novas mensagens.");
+var consumer = new EventingBasicConsumer(channel);
+consumer.Received += (model, ea) =>
+{
+    var body = ea.Body.ToArray();
+    var message = Encoding.UTF8.GetString(body);
+    Console.WriteLine($" [x] recebido {message}");
+};
+channel.BasicConsume(queue: "hello",
+                     autoAck: true,
+                     consumer: consumer);
+Console.WriteLine(" Pressione [enter] para finalizar.");
+Console.ReadLine();
+
+
+/***/
+//COntrato JSON
+{
+    "idPedido": "123",
+    "numeroCartao": "1234-5678-9123-4567",
+    "portador": "Jao da Silva",
+    "cvv": 123,
+    "vencimento": "10/26"
+}

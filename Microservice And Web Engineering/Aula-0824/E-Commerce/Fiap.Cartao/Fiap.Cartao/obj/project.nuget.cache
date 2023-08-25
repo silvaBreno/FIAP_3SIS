@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "i7nvenE51EN4MG3f9BEzhucnSCD531mLSKfG5DLSEWZAmEpSbQyjTjmGhKYGpfwrT+STGtlljxY1cxs+qwbhHA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\logonrmlocal\\Desktop\\FIAP_3SIS\\Microservice And Web Engineering\\Aula-0824\\E-Commerce\\Fiap.Cartao\\Fiap.Cartao\\Fiap.Cartao.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\logonrmlocal\\.nuget\\packages\\rabbitmq.client\\6.5.0\\rabbitmq.client.6.5.0.nupkg.sha512",
+    "C:\\Users\\logonrmlocal\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\logonrmlocal\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
