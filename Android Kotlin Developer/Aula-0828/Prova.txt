@@ -1,0 +1,8 @@
+room data base
+DAO
+primary key
+entitiy
+
+criar uma tela com uma lista usando recycler view e essa lista vamos controlar
+
+RecyclerView e RoomDataBase;
