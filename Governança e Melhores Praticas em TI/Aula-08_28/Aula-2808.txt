@@ -1,0 +1,25 @@
+
+55 89 144 - epic
+13 21 34 - feature
+3 5 8 - backlog
+0 1 2 - tarefas
+
+pontuacao baixa - coisas mais simples usamos pontuação minima (ja fiz e é rapido fazer)
+pontuacao media -a pontuacao do meio (ja fiz, é dificil de fazer)
+pontuacao alta - a pontuacao mais alta (nunca fiz, vo ter q estudar e dá trabalho)
+
+se der pontuação diferente, um só que deu pontuação mais alta fala; 
+e o outro com pontuação mais baixa fala;
+
+rodamos novamente a rodada de notas
+
+Relate Work -> isso traz informações interessantes, da hr e dia que foi incluido, a pessoal que fez tb.
+
+RELATED
+PREDECESSOR 
+
+
+- Base de dados de Cliente (Oracle)
+- Base de dados do Estacionamento (Oracle)
+- API para cadastro de Cliente
+- Aplicação Web com Spring Boot e Spring MVC
