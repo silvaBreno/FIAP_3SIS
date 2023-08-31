@@ -1,0 +1,13 @@
+Disco Rígido
+
+ \-> Normalmente em uma operação o tempo de leitura é o mesmo tempo de escrita;
+ \-> tempo de procura é o tempo que demora para se buscar um informação ali na hora que a cabeça de leitura vai buscar a informação;
+ \-> Normalmente, nos discos atuais leva-se 6ms para buscar as informações mencionadas anteriormente;   
+ \-> tempo de leitura (tl) = tempo de escrita (tl) = tempo de atraso rotacional "latencia rotacional" (tlr) + tempo de procura (tempo de seek "procurar") + tempo de coleta dos bits
+ \-> Pensando nos pratos de leitura, não é possível ter apenas uma cabeça de leitura entre os discos pq se esse fosse o caso perderiamos desempenho
+ porque não daria para fazer leituras em paralelo/ao mesmo tempo. 
+ \-> quando maior o tamanho do disco mais conseguimos armazenar coisa ali dentro, ou seja dentro de um mesmo setor do disco, as areas mais distantes 
+ \-> do centro conseguem armazenas mais coisas pois seu tamanho é maior
+ \-> ou seja, se considerarmos a fórmula que L= angulo x raio, como o raio é maior para o setor mais distante, assim temos que essa area afastada
+ \-> armazena mais coisas;
+ \-> latencia rotacional tempo que demora para ir do repouso até a velocidade de trabalho e que tb é a velocidade que a eletrônica do produto aguenta fazer a leitura.
