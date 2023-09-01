@@ -1,0 +1,40 @@
+Continuação da aula anterior: 
+
+
+1. Iniciar o start service do docker
+2. Abrir o software do Docker
+3. Abrir o Visual Studio 2022
+4. Abrir o projeto Ecommerce
+5. Abrir o PowerShell
+6. Rodar o comando para iniciar o docker: docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 -p 5672:5672 rabbitmq:3-management
+7. Após, a imagem ser criada, rodar o projeto no Visual Studio 2022
+8. Após, o projeto subir, entrar no navegador e entrar no endereço: http://localhost:8080/
+9. Feito isso, inserir o login e senha (login: guest / senha: guest)
+10. Iremos utilizar o site https://www.mockable.io/ para mockar/simular uma API de cartão, lá vamos conseguir simular os dados;
+11. Usar o TryOut e criar uma REST API:
+
+	//PATCH -> ele atualiza só uma parte do dados. Imagina quem joga, quando tem atualização no jogo, nós recebemos um PATCH novo
+	//PUT -> o put ele substitui a entidade inteira, ele literalmente faz substituição da entidade como um todo.
+	//GET -> é obter dados // recuperar informação
+	//POST -> criar uma nova entidade em um banco ou em um novo serviço, portanto, semanticamente não seria correto utilizar o POST nesse caso.
+	
+	É necessário preencher o site, e para esse cenário inicial vamos seguir com o seuginte caminho:
+	
+	Path: http://demo2982399.www.mockable.io/validar-cartao
+	Verb: GET
+	Headers:  (com a utilização de Hearders podemos limitar o número de solicitações que o usuario faz ao clicar várias vezes no botao submit// Podemos deixar a solicitação ativa nas proximas X horas)
+	Response status: no primeiro momento queremos simular que API esta funcionando, portanto vamos usar o 200 inicialmente.
+	Content-Type: as linguaguens usam um parser para conseguir utilizar e validar a info da url. Nesse caso vamos usar a application/json
+	Content-Encoding: é como o site está configurado/codificado.
+	Response Body: 	{
+						"idPedido": "123",
+						"numeroCartao": "1234-5678-9123-4567",
+						"portador": "Jao da Silva",
+						"cvv": 123,
+						"vencimento": "10/26"
+					}	
+						
+	Display Name: Validar Cartão
+	Enable Request Logger: habilitar
+	
+12. 
