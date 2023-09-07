@@ -1,0 +1,21 @@
+Alocação Contínua (Contígua)
+
+- Na alocaçao continua temos um problema pois ao sair arquivos pequenos, normalmente temos um problema porque os espaços ficam vazios
+devido a baixa probabilidade de termos algum programa pequeno que se encaixe.
+- Dificuldade de tratar alterações no tamanho dos arquivos
+
+Lista Ligada de Setores
+
+pontos positivos: 
+ -"elimina" a fragmentação;
+ -acomoda facilmente variações de tamanho dos arquivos;
+ 
+Pontos negativos: 
+ - não há acesso randômico: é necessário ler cada bloco da lista para determinar o próximo bloco
+ - o tamanho do bloco de dados deixa de ser uma potência de dois (2^n)
+ 
+
+Lista Ligada de Setores Indexada 
+ 
+ - todos os sistemas de arquivos possuem uma tabela lógica que eu tenho a informação de quais blocos compoe o aplicativo.
+ 
