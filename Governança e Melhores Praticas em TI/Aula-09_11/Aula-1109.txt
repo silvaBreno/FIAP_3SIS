@@ -1,0 +1,63 @@
+Aula de Estimativas de Projetos
+
+ - Dilan recebeu uma reclação de três clientes, e pediram para ele utilziar outra metodologia para estimativa de projeto
+ - FPA/APF => Function Point Analysis ou Análise de Pontos de Função
+ 
+ Parâmetros que são utilizamos normalmente:
+ 
+ - Previsão: definir algo com base em probabilidades;
+ - Projeção: definir algo com base em um histórico passado (por analogia); 
+	Ou seja, o exemplo dado pelo professor foi de um projeto que a empresa onde ele trabalhava, utilizou um projeto parecido 
+	para estimar o preço para um projeto de outro cliente.
+ 
+ - Predição: advinhar o futuro por sentimento;
+ 
+ o Function Point Analyses (FPA) é um projeto de previsão, ele mistura estatica,histórico e julgamento de quem está estimando.
+ 
+ Na hora de estimar posso utilizar duas formas:
+ 
+ A) Estimativa Direta: atribui-se diretamente um valor estimado para fazer algo. 
+    Por exemplo: atribui-se um número de horas de trabalho para criar uma tabela no banco de dados.
+ B) Estimativa Paramétrica: utiliza-se um fator de referencia, um item de avaliação de grau de complexidade, para determinar 
+    para determinar o esforço para fazer algo. 
+	Por exemplo: define-se o número de campos de dados que uma tabela de banco de dados vai ter e com base nessa informação, 
+	define-se o tempo para criar a tabela no banco de dados.
+
+ Um pouco mais sobre o tema:
+ COCOMO: acrescenta a possibilidades de ajustar as estimativas conforme fatores de influência;
+ 
+ 
+ Sistemas mais comerciais utilizar o FPA, o COCOMO é utilizado por sistemas mais complexos como sistemas bélicos dos EUA e Inglaterra; A NASA também utiliza
+ 
+ Ferramenta de Estimativa de Pontos de Software por análise de pontos de função (FPA - FUNCTION POINT ANALYSIS)
+ 
+ Componente Funcional Básico (CFB) -> itens de backlog do 
+ 
+ ESTUDO DE CASO SIMULADO:
+ 
+ Sempre que eu rodar uma extração de sistema é interessante fazer a criação de uma coluna de data de exportação para saber quando foi extraido do sistema transacional
+ Além da Base de produto e Base de exportação Produto, nesse caso vamos optar por criar uma outra para termos o histórico de preços, pois é interessante
+ comparamos os dados. 
+ 
+ Base de Produto: Colunas [IdProduto, NomeProduto, PreçoUnitario, UnidadeMedida, CódFabricante];
+ Base de Exportação Produto: Colunas [IdProduto, NomeProduto, PreçoUnitario, UnidadeMedida, CódFabricante, DataExportação];
+ Base de Histórico Preço: Colunas [IdProduto, DataInicioPreço, Preço];
+ 
+ API de Inclusão: Base de Produto, Base de Histórico Preços
+ API de Update Preço: Base de Produto, Base de Histórico Preços
+ API de Consulta Produto: Base de Produto
+ API de Extração de Produto: Base de Produto, Base de Extração Produto
+ 
+ 2° Passo: Classificação Funcional
+
+ Armazenamento função de dados:
+	\-> (ALI) Arquivo Lógico Interno 
+	\-> (AIE) Arquivo de Interface Externa
+	
+ Interação Função de Transação:
+ \-> (EE) Entrada Externa: INPUT, UPDATE, DELETE
+ \-> (SE) Saída Externa: é um processamento que gera dado novo a partir de dados de origem; Ex: Eu quero criar um dashboard com as notas dos alunos, exibindo, média, moda, mediana e variância
+ \-> (CE) Consulta Externa: Query (SELECT) 
+ 
+ 
+ 
