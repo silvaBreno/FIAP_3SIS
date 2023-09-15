@@ -1,0 +1,12 @@
+
+
+1. Abrir o "Start Docker Service"
+2. Abrir o software do Docker
+3. Abrir o PowerShell
+4. Para criar a imagem redis, inserir o segundo comando: docker run --name some-redis -d -p 6379:6379 redis
+5. Após criar a interface redis commander (é como se fosse a nossa interface sql), inserir o comando: docker run --rm --name redis-commander -d -p 8081:8081 ghcr.io/joeferner/redis-commander:latest
+6. Copiar o arquivo docker-compose.yaml para uma pasta local
+7. Apagar os container criados anteiormente
+8. Acessar a pasta local onde o arquivo está usando o VsCode
+9. Executar o comando abaixo:
+10. docker compose up
