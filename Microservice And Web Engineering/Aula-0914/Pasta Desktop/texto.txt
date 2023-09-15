@@ -1,0 +1,3 @@
+fotos:produtos:1
+
+C:/Imagens:produto1.png

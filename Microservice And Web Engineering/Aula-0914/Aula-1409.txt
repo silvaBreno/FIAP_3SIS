@@ -10,3 +10,6 @@
 8. Acessar a pasta local onde o arquivo está usando o VsCode
 9. Executar o comando abaixo:
 10. docker compose up
+11. Feito isso criar o arquivo index.js no vscode
+12. npm init
+13. npm i express redis
