@@ -103,3 +103,33 @@ END GET_ANNUAL_COMP;
 /
 
 EXECUTE dbms_output.put_line(GET_ANNUAL_COMP(100));   
+
+
+
+-- PELO PROFESSOR
+
+create or replace function get_annual_comp 
+(p_ei employees.employee_id%type)
+return number
+is
+   v_ann_sal employees.salary%type;
+begin
+  select (salary*12) + (nvl(commission_pct,0)*salary*12)
+  into   v_ann_sal
+  from   employees
+  where  employee_id = p_ei;
+  
+  return v_ann_sal;
+exception
+when no_data_found then
+    dbms_output.put_line('ID não existe!');
+    return null;
+when others then
+    dbms_output.put_line('Erro!');
+    return null;
+end get_annual_comp;
+/
+exec dbms_output.put_line(get_annual_comp(1010));
+select last_name,salary,commission_pct,get_annual_comp(employee_id) ann_comp
+from employees
+where department_id in (80,90);
