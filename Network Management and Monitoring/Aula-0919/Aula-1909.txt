@@ -1,0 +1,7 @@
+Para instalação da VPN é necessário a instalação do módulo de segurança no roteador
+
+Instalação do Módulo de Segurança no Roteador R1
+
+No exemplo da aula 1
+
+O roteador que o professor trouxe para aula, ele é como se fosse um roteador que tem um switch acoplado e também um access point.
