@@ -1,0 +1,5 @@
+def lifecycle_version = "2.5.1"
+    def coroutine_version = "1.6.1"
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version")
