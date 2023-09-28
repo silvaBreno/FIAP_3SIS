@@ -1,0 +1,44 @@
+Iremos testar quando nossa aplicação consegue aguentar!
+
+Testes de Unidade - JEST
+Testa de Interação (End Point) - Ferramenta SuperTeste
+Teste de Carga - k6 
+
+No package.json ficam todas nossas dependencias
+Dentro o package.json o express é o servidor do Node
+
+Temos dois scripts é o test, ou seja, se rodarmos no projeto npm test ele vai rodar o JEST (ele mostra os modulos da aplicacao e a cobertura para cada modo. e ele mostra quando linhas estao cobertas)
+O segundo script ele roda o Node App.
+
+
+No index.js, o professor criou uma funcao aplicarDesconto com uma regra besta apenas para entendermos a ideia;
+
+o meu arquivo de tete vai ser sempre o arquivo/modulo q estou testando com o .test. no meio do nome, 
+no caso do index.test.js eu estou testando dois casos. A literatura diz que um IF precisa de pelo menos dois teste, um considerando que a aplicacao nao entrou no meu if e o outro se entrou
+esse metodo tem o apelido de "caixa branca"
+
+na linha 1 eu to importando e to pegando o modulo q criamos no index.js... estou pegando o resultado e quando ele precisa retornar de desconto e na 
+linha 4 eu passo o resultado que eu espero, no caso igual a 5;
+
+O primeiro eu passo 10 e 5, ele vai me retornar 5
+O segundo teste eu passo 5 e 10 e espero que ele retorne 0;
+
+Nós baixamos o projetos e precisamos rodar o comando "npm i", usamos esse código para baixar todas as dependencias do projeto, o "i" aqui é de install;
+e agora precisamos rodar o comando "npm test" para rodar o Jest
+
+O professor foi no segundo teste do index.test e mudou o .toEqual(-1) para o teste falhar
+
+No arquivo app.js, estamos usando uma API, no inicio eu estou importando o arquivo index.js
+o express é o servidor node
+o app é quem vai g
+a porta vai ser 3000
+a api vai usar json 
+
+e dentro do app.get estou pegando os paramentros(req.params.valor) e estou retornando direto (usando o response.json...);
+
+no if(require.main === modulo)
+só deixa iniciar se for iniciar pelo npm start
+
+
+No arquivo app.test.js o professor disse que é interessante usar o VERBO primeiro e passar o caminho a rota
+e dps dentro do teste ele testa primeiro o valor do statusCode e depois também testa o retorno da API
