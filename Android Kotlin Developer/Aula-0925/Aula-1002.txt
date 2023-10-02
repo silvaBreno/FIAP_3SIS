@@ -1,0 +1,12 @@
+o checkpoint 5 será individual
+
+a barra precisar crescer de maneira randomica, não é para deixar o valor fixo
+o incremento precisa ser feito de 1500ms em 1500ms (1,5seg)
+os valores precisam ser incrementados aleatoriamente de 0 a 20;
+vamos utlizar o linearprogressindicator, e ao inves de usar o indeterminate=true, não vamos precisar usar.
+No caso, vamos precisar adicionar o parametro progress(), e ele indicar quanto da barra de progresso eu vou preeencher, ou seja,
+conforme formos incrementando, esse valor vai precisar aumentar a barra. E quando chegar no 100 precisa acabar
+Seria interessante usar um snackbar para mostrar que cavalo venceu;
+
+e na activity: android:progress="100"
+no programa posso usar => binding.linearProgress.progress = 50;

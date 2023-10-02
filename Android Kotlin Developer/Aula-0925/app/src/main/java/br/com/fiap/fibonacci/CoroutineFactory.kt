@@ -9,6 +9,7 @@ object CoroutineFactory {
     suspend fun calculateFibonacci(sequenceNumber: Int): Int{
         return withContext(Dispatchers.Default){
             async {
+                //podemos colocar um delay para ele iniciar o calculo apenas dps de um determinado tempo
                 calculate(sequenceNumber)
             }.await()
         }
