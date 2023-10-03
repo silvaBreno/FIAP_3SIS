@@ -1,0 +1,91 @@
+Gerenciamento da Liberação do Software
+
+A indústria de software segue um roteiro na hora de liberar um produto novo ou uma nova versão de um produto em uso:
+
+1. Versão Alpha - Ocorrem testes dentro da fábrica de software e/ou fábrica de testes
+2. Versão beta
+3. Release Candidate
+4. RTM Release to Manufacturing
+5. GA General Availability
+
+Os ambientes de infraestrutura para atender a esse processo também devem ser cuidadosamente preparados e administrados:
+
+Infra de Desenvolvimento (envolve PC de desenvolvedores e servidores para criar e manter fonts e executáveis - versão Alpha)
+	\-:> o ambiente de homologação deve ser separado do ambiente do desenvolvedor;
+
+Infra de Testes de Versões no ciclo de testes finais e liberação (versoes Beta, Release Candidate, Release do Manufacturing)
+
+Infra de Uso Diário para atender os negócios/produtiva (versão General Availability)
+
+Para que se tenha eficiência, eficácia e efetividade em avalições de software, é preciso estratégia.
+
+Em teste, uma ESTRATÉGIA envolverá TÉCNICAS para testar o software em diversos NÍVEIS de detalhe, quando ao FUNCIONAMENTO e aspectos NÃO FUNCIONAIS, em
+situações de CRIAÇÃO de algo novo ou MANUTENÇÃO/MUDANÇA de código existente.
+
+O que identificamos através de um teste?
+
+Quando algo dá errado, dizemos que algo FALHOU! Lembrar que os testes buscam por falhas!
+Essas falhas, por sua vez podem ser causadas por defeitos e erros!
+Erros são fruto da ação humana.
+
+Falha = aplicativo não funciona  --->> causada por um defeitos
+Defeito = código com defeito de lógica --->> ccausado por um erros
+Erro = programação ou especificação errada
+
+*Procedimento do Testes*
+
+Todo teste é baseado em: 
+
+1º) Inputs Previstos
+2º) Outputs Esperados
+3º) Procedimento de teste
+
+*Organização do Teste*
+
+O desenvolvedor sempre fará o teste dele! Chamamos esse teste de Unitário, cujo foco é verificar e validar um componente de software.
+	\-> CUIDADO: "O desenvolvedor geralmente tem a preguiça e desgosto por testar software. Ele gosta de programar e em geral quer entregar logo tudo 
+	o que produz, pegando logo outra coisa nova pra fazer.
+	
+*Níveis de Teste*
+
+Entendendo através de exemplos: Caso do Pneu Furado
+
+Passos:
+1º - O pneu do carro murchou!
+2º - Você leva ao mecânico/borracheiro
+3º - Para que o pneu volte a funcionar de forma correta no carro... 
+	 o mecânico procede a instalação do pneu e alinha e balanceia a roda (TESTE DE COMPONENTES INTEGRADOS);
+4º - Assim que o mecânico conclui o conserto... ele testa de o vazamento persiste, enchendo o pneu e colocando-o em uma banheira com água (TESTE UNITÁRIO);
+5º - Você então, dirige o seu carro e confirma se o funcionamento está ok (TESTE DE ACEITAÇÃO DO SISTEMA);
+6º - Quando o mecânico termina o alinhamento e balanceamento ele procede um teste de rua (TESTE DE SISTEMA FUNCIONANDO DE FORMA COMPLETA);
+
+Quem executa os testes de componentes integrados e unitários são os próprios desenvolvedores;
+Quem executa os testes de aceitação do sistema e teste de sistema funcionando de forma completa é o próprio time de QA se tiver e os usuários;
+
+O professor disse que as vezes você ter um time de QA pode ser um problema, pois se desenvolvedor X ou Y ao submeter o código ao time de QA e esses
+desenvolvedores X ou Y forem muitos bons e conhecidos na empresa, pode ser que quando eles submeter o código ao time de QA, o time de QA ao saberem 
+quem escreveu o código pode começar a aprovar o código sem realmente de fato analisar bem o código que eles receberam. Ou seja, o time de QA pode 
+criar um falsa ideia de que pelo fato do desenvolvedor X ou Y sempre escreverem bem seus códigos, o time de QA pode "relaxar" e eles acabam avaliando 
+o código de forma mais "leve" e até mesmo sempre aprovando o código deles.
+
+
+O modelo V de testes define esses níveis: 
+
+	\Levantamento de Requisitos ----------> subsidia informações para planejar ----------> Teste de Aceitação/Homologação pelo usuários/
+		\Modelo Funcional------------------------------------------------------------------------------> Teste de Sistema Completo/
+			\Arquitetura técnica de sistema-------------------------------------------> Teste de integração entre componentes/
+				\Construção de Código----------------------------------------------------------> Teste Unitário de Código/
+Fluxo do Projeto										\CÓDIGO PRONTO/																Fluxo do Teste
+(Ciclo de Vida)																														(Ciclo de Teste)
+
+
+*Teste de Mudança*
+
+Os testes de mudança tem dois subtipos:
+
+-> Teste de Confirmação (Re-Teste): avalia se o componente modificado está eficaz, eficiente e efetivo
+-> Teste de Regressão: avalia se os componentes não modificados mas que operam em conjunto com aquele que foi alterado, continuam operando com eficácia, 
+eficiência e efetividade. São testes repetitivos que verificam que, a cada nova versão do sistema, partes que já estavam funcionando corretamente, 
+continuam funcionando e não estão sendo afetadas pelas mudanças. A mecanização desses testes deve ser visada, uma vez que são repetitivos
+
+80% do nosso proximo checkpoint vai ser a respeito desses conceitos de testes;
