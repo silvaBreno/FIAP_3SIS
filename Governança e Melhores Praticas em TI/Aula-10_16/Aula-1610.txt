@@ -1,0 +1,6 @@
+Smoke Teste 
+
+	usamos o zaptest para verificar se a aplicacao esta respondendo, portanto, usamos o Tools> URL Scanner e 
+	testamos a arvore de URL que o site tem.
+	
+	
