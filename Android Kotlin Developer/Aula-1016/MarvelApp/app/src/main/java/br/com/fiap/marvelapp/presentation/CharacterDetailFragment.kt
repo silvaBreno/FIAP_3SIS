@@ -5,17 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import br.com.fiap.marvelapp.databinding.FragmentCharacterDetailBinding
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.launch
+import java.util.Observer
 
 class CharacterDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentCharacterDetailBinding
-//    private val character: MarvelCharacterDataResultModel? by lazy {
-//        arguments?.getParcelable(DETAIL_CHARACTER_KEY) as? MarvelCharacterDataResultModel
-//    }
-//    private val comicsAdapter by lazy {
-//        ComicListAdapter()
-//    }
+    private val character: MarvelCharacterDataResultModel? by lazy {
+        arguments?.getParcelable(DETAIL_CHARACTER_KEY) as? MarvelCharacterDataResultModel
+    }
+
+    private val viewModel: ComicViewModel by viewModels()
+
+    private val comicsAdapter by lazy {
+        ComicListAdapter()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,19 +36,44 @@ class CharacterDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-//        binding.characterName.text = character?.name
+        binding.characterName.text = character?.name
+        setObservers()
     }
 
     private fun setupRecyclerView() {
         binding.recyclerViewComics.setHasFixedSize(true)
-//        binding.recyclerViewComics.adapter = comicsAdapter
+        binding.recyclerViewComics.adapter = comicsAdapter
     }
 
     companion object {
         private const val DETAIL_CHARACTER_KEY = "DETAIL_CHARACTER_KEY"
 
-//        fun buildBundle(characterDataResultModel: MarvelCharacterDataResultModel): Bundle {
-//            return bundleOf(DETAIL_CHARACTER_KEY to characterDataResultModel)
-//        }
+        fun buildBundle(characterDataResultModel: MarvelCharacterDataResultModel): Bundle {
+            return bundleOf(DETAIL_CHARACTER_KEY to characterDataResultModel)
+        }
+    }
+
+    private fun setObservers(){
+        viewModel.comicSuccessState.observe(
+            viewLifecycleOwner,
+            Observer{
+                comicsAdapter.setData(it)
+            }
+        )
+
+        viewModel.comicErrorState.observe(
+            viewLifecycleOwner,
+            Observer{
+                Snackbar.make(
+                    binding.recyclerViewComics,
+                    it,
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
+        )
+
+        lifecycleScope.launch {
+            viewModel.listComics(character?.id ?: 1011334)
+        }
     }
 }

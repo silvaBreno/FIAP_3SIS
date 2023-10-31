@@ -20,4 +20,12 @@ interface MarvelService {
         @Query("offset")
         offset: Int = 1241
     ) : Response<MarvelCharacterModel>
+
+    @GET("/v1/public/characters/{characterId}/comics")
+    suspend fun listComics(
+            @Query("timestamp") timestamp: String,
+            @Query("apiKey") apiKey: String,
+            @Query("hash") hash: String,
+            @Path("characterId") characterId: Int
+    ) : Response<ComicModel>
 }

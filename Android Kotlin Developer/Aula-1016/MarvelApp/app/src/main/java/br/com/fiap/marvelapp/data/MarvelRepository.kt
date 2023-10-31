@@ -12,6 +12,13 @@ interface MarvelRepository {
         apiKey: String,
         hash: String,
     ): Response<MarvelCharacterModel>
+
+    suspend fun listComics(
+            timestamp: String,
+            apiKey: String,
+            hash: String,
+            characterId: Int
+    ): Response<ComicModel>
 }
 
 class MarvelRepositoryImpl(
@@ -25,6 +32,17 @@ class MarvelRepositoryImpl(
     ): Response<MarvelCharacterModel> {
         return withContext(Dispatchers.IO){
             service.listCharacters(timestamp, apiKey, hash)
+        }
+    }
+
+    override suspend fun listComics(
+            timestamp: String,
+            apiKey: String,
+            hash: String,
+            characterId: Int
+    ): Response<ComicModel> {
+        return withContext(Dispatchers.IO){
+            service.listComics(timestamp, apiKey, hash, characterId)
         }
     }
 
