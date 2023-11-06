@@ -1,7 +1,7 @@
 package br.com.fiap.fibonacci
 
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
