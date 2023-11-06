@@ -52,7 +52,6 @@ class CountryListFragment : Fragment() {
             Observer {
                 binding.recyclerViewCountries.isVisible = true
                 countryListAdapter.setData(it)
-                //fazer um snackbar aqui para forcar ele abrir
             }
         )
     }
@@ -60,6 +59,7 @@ class CountryListFragment : Fragment() {
     private fun setupRecyclerView() {
         binding.recyclerViewCountries.setHasFixedSize(true)
         binding.recyclerViewCountries.adapter = countryListAdapter
+
     }
 
     private val countryListAdapter by lazy {

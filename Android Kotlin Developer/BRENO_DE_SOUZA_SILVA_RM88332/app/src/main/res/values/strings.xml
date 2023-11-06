@@ -2,4 +2,12 @@
     <string name="app_name">BRENO_DE_SOUZA_SILVA_RM88332</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="country_list_item_title">Listagem de Países</string>
+    <string name="country_short_name" >Nome Abreviado: </string>
+    <string name="welcome_introduction_text">Bem vindo ao Terceiro Checkpoint</string>
+    <string name="welcome_introduction_button">Visualizar lista de países</string>
+    <string name="nome_abreviado_API">Nome Abreviado</string>
+    <string name="nome_da_localizacao_regiao_API">Nome da Localizacao/Regiao</string>
+    <string name="nome_da_capital_governo_API">Nome da Capital Governo</string>
+    <string name="location_region_name">Nome da Regiao: </string>
+    <string name="government_capital_name">Nome da Capital: </string>
 </resources>
