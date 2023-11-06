@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BRENO_DE_SOUZA_SILVA_RM88332</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="country_list_item_title">Listagem de Países</string>
+</resources>
