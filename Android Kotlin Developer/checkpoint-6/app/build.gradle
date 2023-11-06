@@ -1,11 +1,13 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
     namespace 'br.com.fiap.checkpoint'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "br.com.fiap.checkpoint"

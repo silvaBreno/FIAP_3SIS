@@ -18,5 +18,9 @@
         android:id="@+id/countryListFragment"
         android:name="br.com.fiap.checkpoint.presentation.CountryListFragment"
         android:label="fragment_country_list"
-        tools:layout="@layout/fragment_country_list" />
+        tools:layout="@layout/fragment_country_list" >
+        <action
+            android:id="@+id/action_countryListFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
 </navigation>

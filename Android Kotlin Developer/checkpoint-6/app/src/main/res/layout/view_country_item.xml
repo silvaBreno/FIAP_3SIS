@@ -21,11 +21,11 @@
             android:layout_height="wrap_content"
             tools:text="Nome Abreviado"
             android:layout_marginStart="@dimen/spacing_lg"
-            app:layout_constraintStart_toStartOf="@id/countryCard"
-            app:layout_constraintEnd_toEndOf=""
-            app:layout_constraintTop_toBottomOf=""
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/locationRegionName"
             style="@style/TextAppearance.AppCompat.Caption"
             />
+
         <TextView
             android:id="@+id/locationRegionName"
             android:layout_width="wrap_content"
@@ -33,7 +33,6 @@
             tools:text="Nome da Localizacao/Regiao"
             android:layout_marginStart="@dimen/spacing_lg"
             app:layout_constraintStart_toStartOf="@id/countryCard"
-            app:layout_constraintEnd_toEndOf=""
             app:layout_constraintTop_toBottomOf="@id/countryShortName"
             style="@style/TextAppearance.AppCompat.Caption"
             />
@@ -44,7 +43,6 @@
             tools:text="Nome Abreviado"
             android:layout_marginStart="@dimen/spacing_lg"
             app:layout_constraintStart_toStartOf="@id/countryCard"
-            app:layout_constraintEnd_toEndOf=""
             app:layout_constraintTop_toBottomOf="@id/locationRegionName"
             style="@style/TextAppearance.AppCompat.Caption"
             />

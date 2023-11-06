@@ -1,4 +1,4 @@
-package br.com.fiap.checkpoint
+package br.com.fiap.checkpoint.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
