@@ -1,0 +1,130 @@
+Começando a aula de hoje finalizando a aula 22 com testes de limite
+
+Exemplo: 
+
+- Data de Emissao de NF - Teste de Limite
+
+x    |----------------------|----------------------|    y
+
+    10%           "NOTA FISCAL PERMITIDA"        20%
+
+se for x, não mostra mensagem 
+se for y, não mostra mensagem
+x = 25/10
+meio = 30/10
+y = 10/11
+
+
+scanner ent = new scanner(system.in);
+Data dtEmissao = ent.next();
+
+if ((dtEmissao > sysdate-10) && (dtEmissao < sysdate>)){
+    system.out.println("Nota fiscal permitida");
+}
+
+Ainda usando o código anterior e testando outros exemplos:
+
+    |----------------------|----------------------|
+T3  T1         "NOTA FISCAL PERMITIDA"            T2    T4
+
+t1 = 27/10
+t2 = 6/11
+t3 = 26/10 (primeira data antes o limite)
+t4 = 7/11 (primeira data apos o limite)
+
+usando a tecnica anterior conseguimos pegar os bugs:
+
+Teste 1: 
+if ((T4 > T1) && (T4 < T2)){
+    system.out.println("Nota fiscal permitida");
+}
+
+{SEM BUGS}
+
+Teste 2: 
+if ((T3 > T1) && (T3 < T2)){
+    system.out.println("Nota fiscal permitida");
+}
+
+{BUG}
+Teste 3: 
+if ((T2 > T1) && (T2 < T2)){
+    system.out.println("Nota fiscal permitida");
+}
+
+{BUG}
+Teste 4: 
+if ((T1 > T1) && (T1 < T2)){
+    system.out.println("Nota fiscal permitida");
+}
+
+{SEM BUGS}
+
+------------------- Segunda parte da aula ----------------------
+
+**Qualidade de dados** 
+
+-->> Material da aula 23
+
+elas tem tres etapas de avaliação:
+
+profile -> entender oq a tabela tem
+
+analise -> analisar oq tem de errado
+
+arrumar (cleasing) -> e dps de analisar, temos que arrumar o dados
+
+o data cleaner é um ferramenta de análise!
+
+vamos usar o data clear (software) para ajudar a arrumar os dados:
+
+
+1-abrir datacleaner
+2-ultima opcao na direita 
+3- seleciona o tipo de arquivo
+4- dar uma nome
+5- procurar o arquivo e selecionar
+6- fechar e dps no canto esquerdo clicar em build job
+
+
+------------------- Terceira parte da aula ----------------------
+
+**LGPC - Lei Geral de Proteção de Dados** 
+
+-->> Material da aula 24
+
+Normalmente, temos um titular (usuários), um controladores (empresas/empresários) e controlador (pessoas natural ou 
+jurídica q quem competem as decisões referentes ao tratamento de dados pessoais. Normalmente, são as pessoas que guardar 
+as informações)
+
+Todo dado só pode ser coletado se for explicado o motivo, por isso quando entramos em um site eles normalmente informam 
+aos usuários o motivo e para que precisam dos seus dados. Exemplo: Magazine Luiza, ela precisa dos nossos dados para poder
+fazer uma venda e entregar o seu produto na sua casa. Normalmente, a Magazine Luiza precisa compartilhar esses dados com 
+transportadoras parceiras para que elas saibam quais são seus dados como endereço, telefone e dados pessoais para que eles
+saibam aonde entregar o produto. 
+
+Para questões de saúde pública, é necessário que as pessoas entreguem seus dados. 
+
+Para questões de policiais/ determinações judiciais, é necessário entregar seus dados.
+
+Para questões de mercado financeiro, por exemplo quando vc vai abrir um cartão ou pedir um financiamento para o banco, eles exigem que você passe suas informaçoes pessoais.
+
+Para questões de interesse social, por exemplo, bairros de SP que estão com cameras inteligentes que sabem "ler" seu rosto e 
+sabem dizer se a pessoa é bandido ou não. Ou seja, se as pessoas ali do bairro expoem plaquinhas avisando que para andar ali 
+seus imagens estão indo para policia, se a pessoa andar ali ela está aceitando que seus dados sejam enviados.
+
+Categorias Especiais - consideramos como dados sensiveis (religiao, vida sexual, saúde, biometrico, genetico, politico)
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
